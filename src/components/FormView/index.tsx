@@ -1,9 +1,33 @@
-import { Flex, Heading, Button, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Flex,
+  Heading,
+  Button,
+  useBreakpointValue,
+  Spinner,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import { Input } from '../../shared/components/Form/Input';
 import luanaFoto from '../../../public/images/luana-foto.jpg';
+import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 export default function FormView() {
+  function toastSucess() {
+    toast.success('Sucesso! Obrigado pelo contato.', {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+  }
+
+  const [loading, setLoading] = useState(false);
+
+  const simulatorRequest = () => {
+    setLoading(true);
+    setTimeout(() => {
+      toastSucess();
+      setLoading(false);
+    }, 1000);
+  };
+
   const isMobile = useBreakpointValue({
     base: true,
     sm: true,
@@ -16,8 +40,9 @@ export default function FormView() {
     <Flex
       maxW="1440px"
       h={['100%', '100%', '100%', '100%', '600px']}
-      mb={['5rem', '5rem', '2rem']}
+      mb={['5rem', '5rem', '7rem']}
       mx="auto"
+      mt={['0', '0', '2rem']}
       align="center"
       justify="center"
       flexDir={['column', 'column', 'row']}
@@ -49,6 +74,7 @@ export default function FormView() {
           Quer ajudar a modernizar o Brasil?
         </Heading>
         <Button
+          id="form-control"
           mt="3rem"
           mx="2rem"
           w={['160px', '160px', '200px']}
@@ -58,6 +84,19 @@ export default function FormView() {
           color="white"
           borderRadius="0"
           boxShadow="2xl"
+          _hover={{
+            background: 'white',
+            color: '#690da6',
+            border: '1px solid #690da6',
+          }}
+          _focus={{
+            border: 'none',
+            outline: 'transparent',
+          }}
+          _active={{
+            border: 'none',
+            outline: 'transparent',
+          }}
         >
           Assinar petições
         </Button>
@@ -98,9 +137,23 @@ export default function FormView() {
           mt={['10', '10', '4rem']}
           borderRadius="0"
           type="submit"
+          onClick={() => simulatorRequest()}
           boxShadow="2xl"
+          _hover={{
+            background: 'white',
+            color: '#690da6',
+            border: '1px solid #690da6',
+          }}
+          _focus={{
+            border: 'none',
+            outline: 'transparent',
+          }}
+          _active={{
+            border: 'none',
+            outline: 'transparent',
+          }}
         >
-          Enviar
+          {loading ? <Spinner /> : 'Enviar'}
         </Button>
       </Flex>
     </Flex>

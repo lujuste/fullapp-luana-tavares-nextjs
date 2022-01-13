@@ -4,16 +4,32 @@ import {
   Button,
   Flex,
   Heading,
+  Spinner,
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { Input } from '../../shared/components/Form/Input';
 import Image from 'next/image';
 import Header from '../../shared/components/Header';
+import { toast } from 'react-toastify';
 import Footer from '../../shared/Footer';
 import luanaFoto from '../../../public/images/luana-foto.jpg';
+import { useState } from 'react';
 
 export default function Contact() {
+  function toastSucess() {
+    toast.success('Sucesso! Obrigado pelo contato.', {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+  }
+  const [loading, setLoading] = useState(false);
+  const simulatorRequest = () => {
+    setLoading(true);
+    setTimeout(() => {
+      toastSucess();
+      setLoading(false);
+    }, 1000);
+  };
   const isMobile = useBreakpointValue({
     base: true,
     sm: true,
@@ -71,6 +87,19 @@ export default function Contact() {
             color="white"
             borderRadius="0"
             boxShadow="2xl"
+            _hover={{
+              background: 'white',
+              color: '#690da6',
+              border: '1px solid #690da6',
+            }}
+            _focus={{
+              border: 'none',
+              outline: 'transparent',
+            }}
+            _active={{
+              border: 'none',
+              outline: 'transparent',
+            }}
           >
             Assinar petições
           </Button>
@@ -112,8 +141,22 @@ export default function Contact() {
             borderRadius="0"
             type="submit"
             boxShadow="2xl"
+            _hover={{
+              background: 'white',
+              color: '#690da6',
+              border: '1px solid #690da6',
+            }}
+            _focus={{
+              border: 'none',
+              outline: 'transparent',
+            }}
+            _active={{
+              border: 'none',
+              outline: 'transparent',
+            }}
+            onClick={() => simulatorRequest()}
           >
-            Enviar
+            {loading ? <Spinner /> : 'Enviar'}
           </Button>
         </Flex>
       </Flex>

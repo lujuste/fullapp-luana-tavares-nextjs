@@ -46,6 +46,14 @@ export default function Footer() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
 
+  const simulatorRequest = () => {
+    setLoading(true);
+    setTimeout(() => {
+      toastSucess();
+      setLoading(false);
+    }, 1000);
+  };
+
   function toastSucess() {
     toast.success('Sucesso! Obrigado pelo contato.', {
       position: toast.POSITION.BOTTOM_CENTER,
@@ -189,6 +197,7 @@ export default function Footer() {
                       bgColor="white"
                       _hover={{ bgColor: 'purple.900', color: 'white' }}
                       type="submit"
+                      onClick={() => simulatorRequest()}
                     >
                       {loading ? <Spinner /> : 'Enviar'}
                     </Button>
@@ -288,6 +297,7 @@ export default function Footer() {
                 color="white"
                 _hover={{ bgColor: 'transparent', border: '1px solid #FFF' }}
                 type="submit"
+                onClick={() => simulatorRequest()}
               >
                 {loading ? <Spinner /> : 'Enviar'}
               </Button>

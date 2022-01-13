@@ -10,6 +10,8 @@ import {
   SlideFade,
 } from '@chakra-ui/react';
 
+import Reveal from 'react-reveal';
+
 import { useState, useEffect } from 'react';
 
 import CardDigital from './CardDigital';
@@ -81,64 +83,66 @@ export default function ModernServices() {
             flexDir="column"
             mt={['9rem', '2rem', '0']}
           >
-            <Heading mb="3rem" fontFamily="Raleway">
-              Modernização dos
-              {isWideVersion ? (
-                <Text color="white" bgColor="purple.900" as={'span'}>
-                  Serviços Públicos{' '}
+            <Reveal>
+              <Heading mb="3rem" fontFamily="Raleway">
+                Modernização dos
+                {isWideVersion ? (
+                  <Text color="white" bgColor="purple.900" as={'span'}>
+                    Serviços Públicos{' '}
+                  </Text>
+                ) : (
+                  <Text color="white" bgColor="purple.900">
+                    Serviços Públicos{' '}
+                  </Text>
+                )}
+                <Text mt="2.5rem" fontWeight="400" fontSize="20px">
+                  ⚠️ O que isso significa?
                 </Text>
-              ) : (
-                <Text color="white" bgColor="purple.900">
-                  Serviços Públicos{' '}
-                </Text>
-              )}
-              <Text mt="2.5rem" fontWeight="400" fontSize="20px">
-                ⚠️ O que isso significa?
-              </Text>
-            </Heading>
+              </Heading>
+            </Reveal>
             <Flex flexDir="column">
               <CardMobile
                 image="digital-transformation"
                 title="Transformação digital de serviços"
-                description="Transformamos seus documentos. Fazemos com que ele seja simples, claro e fácil entender."
+                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
               >
                 <ConsultancyIcon />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero meu contrato" />
+              <ButtonCards callToAction="Quero participar da transformação" />
             </Flex>{' '}
             <Flex mt="3rem" flexDir="column">
               <CardMobile
                 image="group"
                 title="Reforma Institucional"
-                description="Treinamos o seu time para que ele crie documentos amigáveis."
+                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
               >
                 <IconTrainning />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero meu contrato" />
+              <ButtonCards callToAction="Quero participar da reforma" />
             </Flex>
             <Flex mt="3rem" flexDir="column">
               <CardMobile
                 image="congresso"
                 title="Reforma do Estado"
-                description="Ensinamos você a criar seu documento em Legal Design do zero."
+                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
               >
                 <IconCourses />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero meu contrato" />
+              <ButtonCards callToAction="Quero participar da reforma" />
             </Flex>
             <Flex mb="3rem" mt="3rem" flexDir="column">
               <CardMobile
                 image="poupatempo"
                 title="Modelo poupatempo"
-                description="Automatizamos a criação do seu documento em Legal Design através da nossa plataforma."
+                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
               >
                 <IconContract />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero meu contrato" />
+              <ButtonCards callToAction="Quero participar da mudança" />
             </Flex>
           </Flex>
         </>
@@ -200,40 +204,40 @@ export default function ModernServices() {
               <GridItem mb="2rem">
                 <CardDigital
                   title="Transformação digital dos serviços"
-                  description="Transformamos seus documentos. Fazemos com que ele seja simples, claro e fácil entender."
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero que a Bits faça meu documento" />
+                  <ButtonCards callToAction="Quero participar da transformação" />
                 </Flex>
               </GridItem>
 
               <GridItem mb="2rem">
                 <CardInstitucional
                   title="Reforma institucional"
-                  description="Treinamos o seu time para que ele crie documentos amigáveis."
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero que a Bits treine meu time" />
+                  <ButtonCards callToAction="Quero participar da reforma" />
                 </Flex>
               </GridItem>
 
               <GridItem mb="2rem">
                 <CardRebuild
                   title="Reforma do Estado"
-                  description="Ensinamos você a criar seu documento em Legal Design do zero."
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when,"
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero me inscrever" />
+                  <ButtonCards callToAction="Quero participar da reforma" />
                 </Flex>
               </GridItem>
 
               <GridItem mb="2rem">
                 <CardPoupaTempo
                   title="Modelo Poupatempo"
-                  description="Automatizamos a criação do seu documento em Legal Design através da nossa plataforma."
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Começar agora" />
+                  <ButtonCards callToAction="Quero participar da mudança" />
                 </Flex>
               </GridItem>
             </Grid>

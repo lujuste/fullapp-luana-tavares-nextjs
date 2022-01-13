@@ -11,6 +11,7 @@ import {
   Button,
   Text,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
 import headerLogo from '../../../../public/images/luanaLogo3.svg';
 
@@ -27,6 +28,8 @@ import { useSidebarDrawer } from '../../../contexts/SidebarDrawer';
 import MobileNav from './MobileNav';
 
 export default function Header() {
+  const router = useRouter();
+
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -121,6 +124,7 @@ export default function Header() {
                       w="100%"
                       boxShadow="2xl"
                       h="50"
+                      onClick={() => router.push('#form-control')}
                       bgColor="pink.300"
                       whileTap={{ scale: 1.04 }}
                       whileHover={{ scale: 1.04 }}
@@ -231,6 +235,7 @@ export default function Header() {
                     mr="1rem"
                     color="white"
                     borderRadius="none"
+                    onClick={() => router.push('#form-control')}
                     w="100%"
                     boxShadow="2xl"
                     h="50"

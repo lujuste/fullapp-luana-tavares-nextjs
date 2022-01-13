@@ -12,6 +12,7 @@ import {
   Image,
   Spinner,
   Icon,
+  Box,
 } from '@chakra-ui/react';
 import IconCall from './icons/IconCall';
 import IconMail from './icons/IconMain';
@@ -20,6 +21,8 @@ import LocationIcon from './icons/LocationIcon';
 import IconInstagram from './icons/IconInstagram';
 import IconFacebook from './icons/IconFacebook';
 import IconLinkedin from './icons/IconLinkedin';
+
+import NextLink from 'next/link';
 
 import headerLogo from '../../../public/images/luanaLogo3.svg';
 
@@ -130,9 +133,30 @@ export default function Footer() {
                     w="100%"
                     justify="space-between"
                   >
-                    <IconInstagram />
-                    <IconFacebook />
-                    <IconLinkedin />
+                    <NextLink
+                      href="https://www.instagram.com/luana.tavaressp/"
+                      passHref
+                    >
+                      <Box cursor="pointer">
+                        <IconInstagram />
+                      </Box>
+                    </NextLink>
+                    <NextLink
+                      passHref
+                      href="https://www.facebook.com/luana.tavaressp/"
+                    >
+                      <Box cursor="pointer">
+                        <IconFacebook />
+                      </Box>
+                    </NextLink>
+                    <NextLink
+                      href="https://www.linkedin.com/in/luana-tavares-/"
+                      passHref
+                    >
+                      <Box cursor="pointer">
+                        <IconLinkedin />
+                      </Box>
+                    </NextLink>
                   </Flex>
                 </Flex>
 
@@ -308,9 +332,30 @@ export default function Footer() {
               w="100%"
               justifyContent="space-between"
             >
-              <IconInstagram />
-              <IconFacebook />
-              <IconLinkedin />
+              <NextLink
+                href="https://www.instagram.com/luana.tavaressp/"
+                passHref
+              >
+                <Box cursor="pointer">
+                  <IconInstagram />
+                </Box>
+              </NextLink>
+              <NextLink
+                passHref
+                href="https://www.facebook.com/luana.tavaressp/"
+              >
+                <Box cursor="pointer">
+                  <IconFacebook />
+                </Box>
+              </NextLink>
+              <NextLink
+                href="https://www.linkedin.com/in/luana-tavares-/"
+                passHref
+              >
+                <Box cursor="pointer">
+                  <IconLinkedin />
+                </Box>
+              </NextLink>
             </Flex>
             <Flex mt={['2rem']} maxW="340px" w="100%" color="white" mx="auto">
               <Text

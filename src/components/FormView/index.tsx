@@ -11,6 +11,8 @@ import luanaFoto from '../../../public/images/luana-foto.jpg';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
 
+import NextLink from 'next/link';
+
 export default function FormView() {
   function toastSucess() {
     toast.success('Sucesso! Obrigado pelo contato.', {
@@ -73,33 +75,35 @@ export default function FormView() {
         >
           Quer ajudar a modernizar o Brasil?
         </Heading>
-        <Button
-          id="form-control"
-          mt="3rem"
-          mx="2rem"
-          w={['160px', '160px', '200px']}
-          h={['45px', '45px', '60px', '60px']}
-          fontFamily="Roboto"
-          bgColor="#690da6"
-          color="white"
-          borderRadius="0"
-          boxShadow="2xl"
-          _hover={{
-            background: 'white',
-            color: '#690da6',
-            border: '1px solid #690da6',
-          }}
-          _focus={{
-            border: 'none',
-            outline: 'transparent',
-          }}
-          _active={{
-            border: 'none',
-            outline: 'transparent',
-          }}
-        >
-          Assinar petições
-        </Button>
+        <NextLink href="/peticoes" passHref>
+          <Button
+            id="form-control"
+            mt="3rem"
+            mx="2rem"
+            w={['160px', '160px', '200px']}
+            h={['45px', '45px', '60px', '60px']}
+            fontFamily="Roboto"
+            bgColor="#690da6"
+            color="white"
+            borderRadius="0"
+            boxShadow="2xl"
+            _hover={{
+              background: 'white',
+              color: '#690da6',
+              border: '1px solid #690da6',
+            }}
+            _focus={{
+              border: 'none',
+              outline: 'transparent',
+            }}
+            _active={{
+              border: 'none',
+              outline: 'transparent',
+            }}
+          >
+            Assinar petições
+          </Button>
+        </NextLink>
       </Flex>
       <Flex
         mt={['4rem', '4rem', '0']}

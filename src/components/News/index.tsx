@@ -9,7 +9,10 @@ import {
   Button,
   Avatar,
   Spinner,
+  Divider,
 } from '@chakra-ui/react';
+
+import { MotionGridItem } from '../../shared/styles/animation';
 
 import NextLink from 'next/link';
 import eyeIcon from '../../../public/images/eye.svg';
@@ -24,6 +27,7 @@ import { RichText } from 'prismic-dom';
 import { GetStaticPaths } from 'next';
 import Header from '../../shared/components/Header';
 import Footer from '../../shared/Footer';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 
 interface Post {
   uid?: string;
@@ -117,91 +121,110 @@ export default function News({ posts }: any) {
         mx="auto"
         mt="3rem"
         fontFamily="Raleway"
-        boxShadow="2xl"
+        boxShadow="sm"
         mb="4rem"
       >
         Blog
       </Heading>
       <Grid
+        mx="auto"
         mb="2rem"
         gap={10}
         templateColumns={[
           'repeat(1, 1fr)',
           'repeat(1, 1fr)',
           'repeat(2, 1fr)',
+          'repeat(2, 1fr)',
           'repeat(3, 1fr)',
         ]}
       >
         {posts.map(post => (
-          <GridItem>
-            <Flex
-              flexDir="column"
-              bgColor="#C4C4C4"
-              w="100%"
-              maxW="443px"
-              h="441px"
-              boxShadow="2xl"
-            >
-              <Image
-                src={post.data.banner.url}
-                width={443}
-                height={441}
-                layout="responsive"
-                objectFit="cover"
-              />
-              <Box
-                px="5"
-                w="100%"
-                h="167px"
-                justifyContent="flex-end"
-                bgColor="white"
-              >
-                <Heading
-                  mt="1rem"
-                  fontSize="22px"
-                  fontFamily="Roboto"
-                  textAlign="left"
+          <MotionGridItem whileHover={{ scale: 1.04 }}>
+            <NextLink href={`/novidades/${post.uid}`}>
+              <Flex cursor={'pointer'} mx="auto" flexDir="column">
+                <Flex
+                  flexDir="column"
+                  bgColor="#C4C4C4"
+                  w="100%"
+                  maxW="443px"
+                  h="441px"
+                  boxShadow="sm"
+                  _hover={{ boxShadow: '2xl' }}
                 >
-                  {post.data.title}
-                </Heading>
+                  <Image
+                    src={post.data.banner.url}
+                    width={443}
+                    height={441}
+                    layout="responsive"
+                    objectFit="cover"
+                    quality={75}
+                  />
+                  <Box
+                    px="5"
+                    w="100%"
+                    h="167px"
+                    justifyContent="flex-end"
+                    bgColor="white"
+                  >
+                    <Heading
+                      mt="1rem"
+                      fontSize="22px"
+                      fontFamily="Roboto"
+                      textAlign="left"
+                    >
+                      {post.data.title}
+                    </Heading>
 
-                <Flex mb="1rem" alignSelf="initial">
-                  <Flex mt="2rem" align="center">
-                    <Icon fontSize="1.2rem" as={timerIcon} />
-                    <Text ml="2"> {post.first_publication_date} </Text>
+                    <Flex mb="1rem" alignSelf="initial">
+                      <Flex mt="2rem" align="center">
+                        <Icon fontSize="1.2rem" as={timerIcon} />
+                        <Text ml="2"> {post.first_publication_date} </Text>
+                        <Divider
+                          ml="1.4rem"
+                          borderColor="purple.900"
+                          orientation="vertical"
+                          mr="-1rem"
+                        />
+                      </Flex>
+                      <Flex></Flex>
+                      <Flex ml="2rem" mt="2rem" align="center">
+                        <Icon fontSize="1.2rem" as={eyeIcon} />
+                        <Text ml="2">{post.data.readTime} min de leitura</Text>
+                      </Flex>
+                    </Flex>
+                  </Box>
+                </Flex>
+                <Flex
+                  mt="1rem"
+                  bgColor="white"
+                  width="100%"
+                  boxShadow="sm"
+                  h="80px"
+                  justify="space-between"
+                  align="center"
+                  px="1rem"
+                  _hover={{ boxShadow: '2xl' }}
+                >
+                  <Flex align="center">
+                    <Avatar
+                      name="Luana Tavares"
+                      src="/images/luanaAvatar.jpg"
+                    />
+                    <Text ml="5" color="purple.500">
+                      {' '}
+                      Luana Tavares{' '}
+                    </Text>
                   </Flex>
-                  <Flex ml="2rem" mt="2rem" align="center">
-                    <Icon fontSize="1.2rem" as={eyeIcon} />
-                    <Text ml="2">{post.data.readTime} min de leitura</Text>
+                  <Flex align="center">
+                    <Text ml="auto" color="purple.500" fontWeight="700">
+                      Ler artigo
+                    </Text>
+                    <Icon mt="2" ml="1rem" fontSize="1.3rem" as={arrowIcon} />
                   </Flex>
                 </Flex>
-              </Box>
-            </Flex>
-            <Flex
-              mt="1rem"
-              bgColor="white"
-              width="100%"
-              boxShadow="xl"
-              h="80px"
-              justify="space-between"
-              align="center"
-              px="1rem"
-            >
-              <Flex align="center">
-                <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
-                <Text ml="5" color="purple.500">
-                  {' '}
-                  Luana Tavares{' '}
-                </Text>
               </Flex>
-              <Flex align="center">
-                <Text ml="auto" color="purple.500" fontWeight="700">
-                  Ler artigo
-                </Text>
-                <Icon mt="2" ml="1rem" fontSize="1.3rem" as={arrowIcon} />
-              </Flex>
-            </Flex>
-          </GridItem>
+            </NextLink>
+          </MotionGridItem>
         ))}
       </Grid>
       <Flex ml="auto" align="center">
@@ -215,9 +238,14 @@ export default function News({ posts }: any) {
             borderRadius="0"
             h="60px"
             bgColor="purple.900"
+            _hover={{
+              backgroundColor: 'transparent',
+              color: 'purple.900',
+              border: 'solid 1px #690da6',
+            }}
           >
             {' '}
-            Ver todos os posts{' '}
+            Ver todos os posts <Icon ml="1rem" as={ChevronRightIcon} />{' '}
           </Button>
         </NextLink>
       </Flex>

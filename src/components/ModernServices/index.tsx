@@ -75,22 +75,31 @@ export default function ModernServices() {
           <Flex
             textAlign="center"
             mx="auto"
-            maxW="380px"
+            maxW="280px"
             w="100%"
             justify="center"
             flexDir="column"
-            mt={['-0.5rem', '0']}
+            mt={['9rem', '2rem', '0']}
           >
             <Heading mb="3rem" fontFamily="Raleway">
               Modernização dos
-              <Text color="white" bgColor="purple.900" as="span">
-                Serviços Públicos
+              {isWideVersion ? (
+                <Text color="white" bgColor="purple.900" as={'span'}>
+                  Serviços Públicos{' '}
+                </Text>
+              ) : (
+                <Text color="white" bgColor="purple.900">
+                  Serviços Públicos{' '}
+                </Text>
+              )}
+              <Text mt="2.5rem" fontWeight="400" fontSize="20px">
+                ⚠️ O que isso significa?
               </Text>
             </Heading>
             <Flex flexDir="column">
               <CardMobile
                 image="digital-transformation"
-                title="digital"
+                title="Transformação digital de serviços"
                 description="Transformamos seus documentos. Fazemos com que ele seja simples, claro e fácil entender."
               >
                 <ConsultancyIcon />
@@ -100,8 +109,8 @@ export default function ModernServices() {
             </Flex>{' '}
             <Flex mt="3rem" flexDir="column">
               <CardMobile
-                image="treinamento-mobile"
-                title="Treinamento"
+                image="group"
+                title="Reforma Institucional"
                 description="Treinamos o seu time para que ele crie documentos amigáveis."
               >
                 <IconTrainning />
@@ -111,8 +120,8 @@ export default function ModernServices() {
             </Flex>
             <Flex mt="3rem" flexDir="column">
               <CardMobile
-                image="cursos-mobile"
-                title="Cursos"
+                image="congresso"
+                title="Reforma do Estado"
                 description="Ensinamos você a criar seu documento em Legal Design do zero."
               >
                 <IconCourses />
@@ -122,8 +131,8 @@ export default function ModernServices() {
             </Flex>
             <Flex mb="3rem" mt="3rem" flexDir="column">
               <CardMobile
-                image="contratoautomatico-mobile"
-                title="UXDOC"
+                image="poupatempo"
+                title="Modelo poupatempo"
                 description="Automatizamos a criação do seu documento em Legal Design através da nossa plataforma."
               >
                 <IconContract />
@@ -190,7 +199,7 @@ export default function ModernServices() {
             >
               <GridItem mb="2rem">
                 <CardDigital
-                  title="Consultoria"
+                  title="Transformação digital dos serviços"
                   description="Transformamos seus documentos. Fazemos com que ele seja simples, claro e fácil entender."
                 />
                 <Flex>
@@ -200,7 +209,7 @@ export default function ModernServices() {
 
               <GridItem mb="2rem">
                 <CardInstitucional
-                  title="Treinamento"
+                  title="Reforma institucional"
                   description="Treinamos o seu time para que ele crie documentos amigáveis."
                 />
                 <Flex>
@@ -210,7 +219,7 @@ export default function ModernServices() {
 
               <GridItem mb="2rem">
                 <CardRebuild
-                  title="Cursos"
+                  title="Reforma do Estado"
                   description="Ensinamos você a criar seu documento em Legal Design do zero."
                 />
                 <Flex>
@@ -220,7 +229,7 @@ export default function ModernServices() {
 
               <GridItem mb="2rem">
                 <CardPoupaTempo
-                  title="UXDOC"
+                  title="Modelo Poupatempo"
                   description="Automatizamos a criação do seu documento em Legal Design através da nossa plataforma."
                 />
                 <Flex>

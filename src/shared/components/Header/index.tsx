@@ -12,6 +12,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 
+import headerLogo from '../../../../public/images/luanaLogo3.svg';
+
 import { MotionButton, MotionFlex } from '../../styles/animation';
 
 import Link from 'next/link';
@@ -86,11 +88,9 @@ export default function Header() {
               px="6"
               align="center"
             >
-              <Flex cursor="pointer" mt="-0.3rem">
+              <Flex align="center" mt="1.3rem" cursor="pointer">
                 <Link href="/" passHref>
-                  <Text fontSize="2xl" color="white">
-                    LOGO
-                  </Text>
+                  <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
                 </Link>
               </Flex>
 
@@ -104,9 +104,12 @@ export default function Header() {
                     justify="space-between"
                   >
                     <NavigationItem label="Novidades" href="/novidades" />
-                    <NavigationItem label="Petições" href="/treinamentos" />
-                    <NavigationItem label="Youtube" href="/cursos" />
-                    <NavigationItem label="Contato" href="/blog" />
+                    <NavigationItem label="Petições" href="/peticoes" />
+                    <NavigationItem
+                      label="Curso"
+                      href="https://luanatavaressp.com.br/"
+                    />
+                    <NavigationItem label="Contato" href="/contato" />
                   </Flex>
 
                   <Flex align="center" ml="auto" maxW="400px">
@@ -124,8 +127,9 @@ export default function Header() {
                       _focus={{ border: 'none' }}
                       _hover={{
                         bgColor: '#fff',
-                        color: 'pink.900',
+                        color: 'pink.500',
                         border: '1px solid #CC3366',
+                        boxShadow: 'dark-lg',
                       }}
                     >
                       Quero participar da mudança!
@@ -139,7 +143,7 @@ export default function Header() {
                       <>
                         <HamburgerIcon
                           ml={['0rem', '2rem']}
-                          color="pink.900"
+                          color="pink.500"
                           onClick={onOpen}
                           boxSize="30px"
                         />
@@ -148,13 +152,13 @@ export default function Header() {
                   </Flex>
 
                   <Drawer
-                    size="full"
+                    size="sm"
                     isOpen={isOpen}
-                    placement="left"
+                    placement="right"
                     onClose={onClose}
                   >
                     <DrawerOverlay>
-                      <DrawerContent bg="pink.900">
+                      <DrawerContent bg="purple.900">
                         <DrawerCloseButton
                           color="white"
                           fontSize="1.25rem"
@@ -197,11 +201,9 @@ export default function Header() {
             px="6"
             align="center"
           >
-            <Flex cursor="pointer" mt="-0.3rem">
+            <Flex align="center" mt="1.3rem" cursor="pointer">
               <Link href="/" passHref>
-                <Text color="white" fontSize="2xl">
-                  LOGO
-                </Text>
+                <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
               </Link>
             </Flex>
 
@@ -215,9 +217,12 @@ export default function Header() {
                   justify="space-between"
                 >
                   <NavigationItem label="Novidades" href="/novidades" />
-                  <NavigationItem label="Petições" href="/treinamentos" />
-                  <NavigationItem label="Youtube" href="/cursos" />
-                  <NavigationItem label="Contato" href="/blog" />
+                  <NavigationItem label="Petições" href="/peticoes" />
+                  <NavigationItem
+                    label="Curso"
+                    href="https://luanatavaressp.com.br/"
+                  />
+                  <NavigationItem label="Contato" href="/contato" />
                 </Flex>
 
                 <Flex align="center" ml="auto" maxW="700px">
@@ -235,7 +240,7 @@ export default function Header() {
                     _focus={{ border: 'none' }}
                     _hover={{
                       bgColor: '#fff',
-                      color: 'pink.900',
+                      color: 'pink.500',
                       border: '1px solid #CC3366',
                     }}
                   >
@@ -250,7 +255,7 @@ export default function Header() {
                     <>
                       <HamburgerIcon
                         ml={['0rem', '2rem']}
-                        color="pink.900"
+                        color="pink.500"
                         onClick={onOpen}
                         boxSize="34px"
                       />
@@ -259,13 +264,13 @@ export default function Header() {
                 </Flex>
 
                 <Drawer
-                  size="full"
+                  size="sm"
                   isOpen={isOpen}
-                  placement="left"
+                  placement="right"
                   onClose={onClose}
                 >
                   <DrawerOverlay>
-                    <DrawerContent bg="pink.900">
+                    <DrawerContent bg="purple.900">
                       <DrawerCloseButton
                         color="white"
                         fontSize="1.25rem"

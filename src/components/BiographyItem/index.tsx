@@ -1,10 +1,16 @@
 import { Flex, Box, Text, Heading, FlexProps } from '@chakra-ui/react';
+import Image from 'next/image';
 
 interface IParagraphProps extends FlexProps {
   paragraph: string;
+  image: string;
 }
 
-export default function BiographyItem({ paragraph, ...rest }: IParagraphProps) {
+export default function BiographyItem({
+  paragraph,
+  image,
+  ...rest
+}: IParagraphProps) {
   return (
     <Flex
       {...rest}
@@ -13,18 +19,29 @@ export default function BiographyItem({ paragraph, ...rest }: IParagraphProps) {
       maxW="1400px"
       w="100%"
       h="auto"
-      my="3rem"
+      my={['0', '0', '3rem']}
     >
-      <Box mx="1rem" bgColor="white" w="531px" h="369px"></Box>
+      <Image
+        src={image}
+        quality={55}
+        objectFit="cover"
+        width={531}
+        height={369}
+        priority={true}
+      />
       <Text
         maxW="590px"
         h="auto"
-        fontSize="18"
+        fontSize={['16', '16', '18']}
         fontFamily="Roboto"
+        lineHeight={1.6}
         fontWeight="400"
+        p={['5', '5', 0]}
+        mt={['10', '10', '10']}
         color="white"
-        textAlign="left"
-        mx="1rem"
+        textAlign={['center', 'center', 'center', 'left']}
+        mx={['auto', 'auto', 'auto', '1rem']}
+        mb={['3rem', '3rem', '0']}
       >
         {paragraph}
       </Text>

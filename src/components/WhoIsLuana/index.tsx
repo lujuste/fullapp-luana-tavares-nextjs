@@ -14,8 +14,8 @@ export default function WhoIsLuana() {
       py="5rem"
     >
       <Heading
-        mt="4rem"
-        fontSize="48px"
+        mt={['0', '0', '4rem']}
+        fontSize={['28px', '28px', '32px', '48px']}
         color="white"
         fontWeight="400"
         fontFamily="Raleway"
@@ -28,6 +28,8 @@ export default function WhoIsLuana() {
       </Heading>
 
       <BiographyItem
+        image="/images/fotoLuana1.jpg"
+        flexDir={['column', 'column', 'column', 'row']}
         paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro
           emprego foi como montadora de sacolas de papelão em uma fábrica, 8
           horas por dia em pé. Ainda assim, nunca deixou de acreditar, sabia que
@@ -41,7 +43,8 @@ export default function WhoIsLuana() {
           completamente."
       />
       <BiographyItem
-        flexDir="row-reverse"
+        image="/images/fotoLuana2.jpg"
+        flexDir={['column', 'column', 'column', 'row-reverse']}
         paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro
           emprego foi como montadora de sacolas de papelão em uma fábrica, 8
           horas por dia em pé. Ainda assim, nunca deixou de acreditar, sabia que
@@ -57,6 +60,8 @@ export default function WhoIsLuana() {
       />
 
       <BiographyItem
+        image="/images/fotoLuana3.jpg"
+        flexDir={['column', 'column', 'column', 'row']}
         paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro
           emprego foi como montadora de sacolas de papelão em uma fábrica, 8
           horas por dia em pé. Ainda assim, nunca deixou de acreditar, sabia que

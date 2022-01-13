@@ -11,21 +11,21 @@ export default function SpinButtonWhite() {
         <circle cx="22" cy="22" r="21" fill="#fff" />
         <path
           d="M18.75 28.25L21.25 30.75L18.75 33.25"
-          stroke="#CD3167"
+          stroke="#690da6"
           stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
           d="M21.25 30.75C14.3463 30.75 8.75002 27.9519 8.75002 24.5C8.75002 23.6112 9.12127 22.7656 9.79002 22"
-          stroke="#CD3167"
+          stroke="#690da6"
           stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
         <path
           d="M26.25 30.23C30.665 29.2656 33.75 27.0625 33.75 24.5C33.75 23.6112 33.3788 22.7656 32.71 22"
-          stroke="#CD3167"
+          stroke="#690da6"
           stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -39,7 +39,7 @@ export default function SpinButtonWhite() {
           width="13.5"
           height="15.75"
           rx="2"
-          stroke="#CD3167"
+          stroke="#690da6"
           stroke-width="5"
           mask="url(#path-5-inside-1_9798:670)"
         />

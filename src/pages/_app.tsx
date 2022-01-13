@@ -4,7 +4,10 @@ import { theme } from '../shared/styles/theme';
 import NProgress from 'nprogress';
 import { useEffect } from 'react';
 import Router from 'next/router';
+import { SidebarDrawerProvider } from '../contexts/SidebarDrawer';
 import 'nprogress/nprogress.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../shared/styles/styles.scss';
 
@@ -27,7 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
+      <SidebarDrawerProvider>
+        <ToastContainer />
+
+        <Component {...pageProps} />
+      </SidebarDrawerProvider>
     </ChakraProvider>
   );
 }

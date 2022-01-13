@@ -1,4 +1,4 @@
-import { Flex, Text, Button } from '@chakra-ui/react';
+import { Flex, Text, Button, Box } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 import SpinButton from '../SpinButton';
 import { useState } from 'react';
@@ -30,7 +30,6 @@ export default function CardMobile({
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <Flex
           mx="auto"
-          borderRadius="10px"
           w="100%"
           maxW="270px"
           h="290px"
@@ -43,9 +42,10 @@ export default function CardMobile({
           boxShadow="2xl"
         >
           <Button
-            mt="-1.5rem"
+            mt="-2.5rem"
             w="auto"
             h="auto"
+            type="button"
             bgColor="transparent"
             _hover={{ bgColor: 'transparent' }}
             border="none"
@@ -54,12 +54,13 @@ export default function CardMobile({
               borderColor: 'none',
               border: 'none',
             }}
-            onClick={handleClick}
+            onClick={() => handleClick()}
             _active={{
               background: 'transparent',
               borderColor: 'none',
               border: 'none',
             }}
+            cursor={'pointer'}
           >
             <SpinButton />
           </Button>
@@ -67,6 +68,7 @@ export default function CardMobile({
             mt="1rem"
             mb="4rem"
             color="white"
+            maxW="200px"
             fontSize="16px"
             fontFamily="Raleway"
             fontWeight="700"
@@ -77,11 +79,10 @@ export default function CardMobile({
         </Flex>
         <Flex
           mx="auto"
-          borderRadius="10px"
           w="100%"
           maxW="270px"
           h="290px"
-          bgColor="pink.900"
+          bgColor="purple.900"
           justify="center"
           align="center"
           flexDir="column-reverse"
@@ -91,8 +92,9 @@ export default function CardMobile({
           <Button
             _hover={{ bgColor: 'transparent' }}
             position="absolute"
-            bottom="7"
-            onClick={handleClick}
+            bottom="3"
+            color="transparent"
+            onClick={() => handleClick()}
             _active={{
               background: 'transparent',
               borderColor: 'none',

@@ -11,6 +11,7 @@ import {
   Divider,
   Image,
   Spinner,
+  Icon,
 } from '@chakra-ui/react';
 import IconCall from './icons/IconCall';
 import IconMail from './icons/IconMain';
@@ -19,6 +20,8 @@ import LocationIcon from './icons/LocationIcon';
 import IconInstagram from './icons/IconInstagram';
 import IconFacebook from './icons/IconFacebook';
 import IconLinkedin from './icons/IconLinkedin';
+
+import headerLogo from '../../../public/images/luanaLogo3.svg';
 
 import { toast } from 'react-toastify';
 
@@ -82,9 +85,9 @@ export default function Footer() {
       <Flex
         as="footer"
         w="100%"
-        h={['100%', '100%', '100%', '396px']}
+        h={['100%', '100%', '100%', '296px']}
         bgColor="purple.900"
-        mt={['-2rem', '-2rem', '0rem']}
+        mt={['2rem', '2rem', '0rem']}
         mx="auto"
         justify="center"
         align="center"
@@ -110,53 +113,41 @@ export default function Footer() {
                 gap={20}
               >
                 <Flex justify="space-around" flexDir="column">
-                  <Text>Logo</Text>
-
-                  <Text color="white">Saiba onde nos encontrar</Text>
-                  <Flex>
-                    <LocationIcon />
-                    <Text ml="10px" color="white">
-                      R.Fidêncio Ramos, 101, <br />
-                      Vila Olímpia, São Paulo/SP <br />
-                    </Text>
+                  <Flex mt="-2rem" ml="-1.5rem">
+                    <Icon as={headerLogo} fontSize="10rem" />
                   </Flex>
-
-                  <Flex>
-                    <IconMail />
-                    <Text ml="10px" color="white">
-                      contato@bitsacademy.com.br{' '}
-                    </Text>
-                  </Flex>
-
-                  <Flex>
-                    <IconCall />
-                    <Text ml="10px" color="white">
-                      +55 11 98425-9825
-                    </Text>
+                  <Flex
+                    mt="-7.5rem"
+                    maxW="100px"
+                    w="100%"
+                    justify="space-between"
+                  >
+                    <IconInstagram />
+                    <IconFacebook />
+                    <IconLinkedin />
                   </Flex>
                 </Flex>
+
                 <Flex
                   justify={['center', 'center', 'space-around']}
                   flexDir="column"
                 >
                   <List color="white">
                     <ListItem fontFamily="Raleway" fontWeight="700" mb="1rem">
-                      Serviços
+                      Navegação
                     </ListItem>
-                    <ListItem mb="1rem">Consultorias</ListItem>
-                    <ListItem mb="1rem">Treinamentos</ListItem>
-                    <ListItem mb="1rem">Cursos</ListItem>
-                    <ListItem mb="1rem">App</ListItem>
-                    <ListItem mb="1rem">Contrato Automático</ListItem>
+
+                    <ListItem mb="1rem">Novidades</ListItem>
+                    <ListItem mb="1rem">Petições</ListItem>
                   </List>
                 </Flex>
-                <GridItem>
+                <GridItem mt="1.5rem">
                   <List color="white">
                     <ListItem mb="1rem" fontFamily="Raleway" fontWeight="700">
                       Outros
                     </ListItem>
-                    <ListItem mb="1rem">Blog</ListItem>
-                    <ListItem mb="1rem">Política de privacidade</ListItem>
+                    <ListItem mb="1rem">Curso</ListItem>
+                    <ListItem mb="1rem">Contato</ListItem>
                   </List>
                 </GridItem>
                 <GridItem>
@@ -165,6 +156,7 @@ export default function Footer() {
                     onSubmit={handleSubmit(onSubmit)}
                     method="post"
                     flexDir="column"
+                    mt="1rem"
                   >
                     <Text
                       as="h4"
@@ -201,12 +193,6 @@ export default function Footer() {
                       {loading ? <Spinner /> : 'Enviar'}
                     </Button>
                   </Flex>
-
-                  <Flex maxW="100px" w="100%" justify="space-between">
-                    <IconInstagram />
-                    <IconFacebook />
-                    <IconLinkedin />
-                  </Flex>
                 </GridItem>
               </Grid>
 
@@ -217,8 +203,7 @@ export default function Footer() {
                 mx="auto"
               >
                 <Text fontSize="14px" color="#ffffff">
-                  Copyright © 2021 Bits Academy. All rights reserved. CNPJ nº
-                  35.070.508/0001-40.
+                  Copyright © 2022 Luana Tavares - All rights reserved.
                 </Text>
               </Flex>
             </Flex>
@@ -229,34 +214,11 @@ export default function Footer() {
             px="2rem"
             h="100%"
             w="100%"
+            my="2rem"
             mx="auto"
             flexDir={['column']}
           >
-            <Text>Logo</Text>
-
-            <Flex>
-              <LocationIcon />
-              <Text ml="10px" color="white">
-                R.Fidêncio Ramos, 101, <br />
-                Vila Olímpia, São Paulo/SP <br />
-              </Text>
-            </Flex>
-
-            <Flex mt="1rem">
-              <IconMail />
-              <Text ml="10px" color="white">
-                contato@bitsacademy.com.br{' '}
-              </Text>
-            </Flex>
-
-            <Flex mt="1rem">
-              <IconCall />
-              <Text ml="10px" color="white">
-                +55 11 98425-9825
-              </Text>
-            </Flex>
-
-            <Flex mt="1.5rem" justify="space-between">
+            <Flex mt="1.5rem" justify="space-around">
               <Flex flexDir="column">
                 <Heading
                   mb="0.5rem"
@@ -264,7 +226,7 @@ export default function Footer() {
                   color="white"
                   fontSize="16px"
                 >
-                  Serviços
+                  Navegação
                 </Heading>
                 <Divider
                   color="white"
@@ -273,11 +235,8 @@ export default function Footer() {
                   orientation="horizontal"
                 />
                 <List color="white">
-                  <ListItem>Consultoria</ListItem>
-                  <ListItem>Treinamentos</ListItem>
-                  <ListItem>Cursos</ListItem>
-                  <ListItem>App</ListItem>
-                  <ListItem>Contrato automática</ListItem>
+                  <ListItem mt="1rem">Novidades</ListItem>
+                  <ListItem mt="1rem">Cursos</ListItem>
                 </List>
               </Flex>
               <Flex flexDir="column">
@@ -296,14 +255,14 @@ export default function Footer() {
                   orientation="horizontal"
                 />
                 <List color="white">
-                  <ListItem>Blog</ListItem>
-                  <ListItem>Política de privacidade</ListItem>
+                  <ListItem mt="1rem">Petições</ListItem>
+                  <ListItem>Contato</ListItem>
                 </List>
               </Flex>
             </Flex>
             <Flex as="form" onSubmit={handleSubmit(onSubmit)} flexDir="column">
               <Heading
-                mt="1.5rem"
+                mt="3.5rem"
                 fontFamily="Raleway"
                 color="white"
                 fontSize="16px"
@@ -323,11 +282,11 @@ export default function Footer() {
               />
               <Button
                 h="60px"
-                mb="1rem"
+                mb="3rem"
                 border="1px solid #fff"
-                bgColor="pink.900"
+                bgColor="pink.500"
                 color="white"
-                _hover={{ bgColor: 'green.900' }}
+                _hover={{ bgColor: 'transparent', border: '1px solid #FFF' }}
                 type="submit"
               >
                 {loading ? <Spinner /> : 'Enviar'}
@@ -343,14 +302,14 @@ export default function Footer() {
               <IconFacebook />
               <IconLinkedin />
             </Flex>
-            <Flex mt={['2rem']} maxW="300px" w="100%" color="white" mx="auto">
+            <Flex mt={['2rem']} maxW="340px" w="100%" color="white" mx="auto">
               <Text
                 mb={['2rem', '2rem', '0']}
-                fontSize="14px"
+                fontSize="12px"
+                mx="auto"
                 textAlign="center"
               >
-                Copyright © 2021 Bits Academy. All rights reserved. CNPJ nº
-                35.070.508/0001-40.
+                Copyright © 2022 Luana Tavares - All rights reserved.
               </Text>
             </Flex>
           </Flex>

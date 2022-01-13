@@ -17,6 +17,9 @@ export const theme = extendTheme({
     gray: {
       '100': '#f5f5f5',
     },
+    brand: {
+      '900': '#690da6',
+    },
   },
   initialColorMode: 'light',
   useSystemColorMode: false,

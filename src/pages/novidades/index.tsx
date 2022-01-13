@@ -16,6 +16,7 @@ import eyeIcon from '../../../public/images/eye.svg';
 import timerIcon from '../../../public/images/time.svg';
 import arrowIcon from '../../../public/images/arrow.svg';
 import { GetStaticProps } from 'next';
+import { MotionGridItem } from '../../shared/styles/animation';
 import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../../services/prismic';
 import { useState } from 'react';
@@ -23,17 +24,25 @@ import { ptBR } from 'date-fns/locale';
 import { format } from 'date-fns';
 import NextLink from 'next/link';
 import Image from 'next/image';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 
 interface Post {
   uid?: string;
   first_publication_date?: string;
   data: {
     title: string;
+    readTime?: number;
     subtitle: string;
     author: string;
     banner: {
       url: string;
     };
+    content?: {
+      heading?: string;
+      body?: {
+        text?: string;
+      }[];
+    }[];
   };
 }
 
@@ -47,7 +56,21 @@ interface HomeProps {
 }
 
 export default function News({ postsPagination }: HomeProps): JSX.Element {
+  function getReadTime(item: Post): number {
+    const totalWords = item.data.content?.reduce((total, contentItem) => {
+      //@ts-ignore
+      total += contentItem.heading.split(' ').length;
+
+      const words = contentItem.body.map(i => i.text.split(' ').length);
+      words.map(word => (total += word));
+      return total;
+    }, 0);
+
+    return Math.ceil(totalWords / 200);
+  }
+
   const formattedPost = postsPagination.results.map(post => {
+    const readTime = getReadTime(post);
     return {
       ...post,
       first_publication_date: format(
@@ -55,6 +78,10 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
         'dd MMM yyyy',
         { locale: ptBR }
       ),
+      data: {
+        ...post.data,
+        readTime,
+      },
     };
   });
 
@@ -74,6 +101,7 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
     setCurrentPage(postsResults.page);
 
     const newPosts = postsResults.results.map(post => {
+      const readTime = getReadTime(post);
       return {
         uid: post.uid,
         first_publication_date: format(
@@ -88,6 +116,7 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
           subtitle: post.data.subtitle,
           author: post.data.author,
           banner: post.data.banner,
+          readTime,
         },
       };
     });
@@ -120,17 +149,29 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
         >
           Blog
         </Heading>
-        <Grid mx="auto" mb="2rem" gap={20} templateColumns={'repeat(2, 1fr)'}>
+        <Grid
+          mx="auto"
+          mb="2rem"
+          gap={20}
+          templateColumns={[
+            'repeat(1, 1fr)',
+            'repeat(1, 1fr)',
+            'repeat(1, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(2, 1fr)',
+          ]}
+        >
           {posts.map(post => (
             <NextLink href={`/novidades/${post.uid}`} key={post.uid} passHref>
-              <GridItem>
+              <MotionGridItem cursor="pointer" whileHover={{ scale: 1.04 }}>
                 <Flex
                   flexDir="column"
                   bgColor="#C4C4C4"
                   w="100%"
                   maxW="443px"
                   h="441px"
-                  boxShadow="2xl"
+                  boxShadow={['sm']}
+                  _hover={{ boxShadow: '2xl' }}
                 >
                   <Image
                     src={post.data.banner.url}
@@ -159,7 +200,12 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
                       <Flex mt="2rem" align="center">
                         <Icon as={timerIcon} fontSize="1.2rem" />
                         <Text ml="2"> {post.first_publication_date} </Text>
-                        <Divider ml="1rem" orientation="vertical" />
+                        <Divider
+                          ml="1rem"
+                          border={'1px'}
+                          borderColor="black"
+                          orientation="vertical"
+                        />
                       </Flex>
 
                       <Flex
@@ -170,7 +216,10 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
                         align="center"
                       >
                         <Icon as={eyeIcon} fontSize="1.2rem" />
-                        <Text ml="2">5 min de leitura</Text>
+                        <Text ml="2">
+                          {' '}
+                          {`${post.data.readTime} min de leitura`}{' '}
+                        </Text>
                       </Flex>
                     </Flex>
                   </Box>
@@ -179,7 +228,8 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
                   mt="1rem"
                   bgColor="white"
                   width="100%"
-                  boxShadow="xl"
+                  boxShadow="sm"
+                  _hover={{ boxShadow: '2xl' }}
                   h="80px"
                   justify="space-between"
                   align="center"
@@ -187,8 +237,8 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
                 >
                   <Flex align="center">
                     <Avatar
-                      name="Dan Abrahmov"
-                      src="https://bit.ly/dan-abramov"
+                      name="Luana Tavares"
+                      src="/images/luanaAvatar.jpg"
                     />
                     <Text ml="5" color="purple.500">
                       {' '}
@@ -202,26 +252,39 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
                     <Icon mt="2" ml="1rem" fontSize="1.3rem" as={arrowIcon} />
                   </Flex>
                 </Flex>
-              </GridItem>
+              </MotionGridItem>
             </NextLink>
           ))}
         </Grid>
         <Flex mt="2rem" mx="auto" align="center">
-          <Button
-            color="purple.900"
-            backgroundColor="transparent"
-            mt="1rem"
-            border="1px solid #690DA6"
-            mb="1.5rem"
-            w="100%"
-            px="5"
-            borderRadius="0"
-            h="60px"
-            onClick={handleNextPage}
-          >
-            {' '}
-            Ver mais postagens{' '}
-          </Button>
+          {nextPage && (
+            <Button
+              color="purple.900"
+              backgroundColor="transparent"
+              mt={['-1rem', '-1rem', '1rem']}
+              border="1px solid #690DA6"
+              mb="1.5rem"
+              w="100%"
+              px="5"
+              borderRadius="0"
+              h="60px"
+              _hover={{
+                background: '#690DA6',
+                color: 'white',
+                border: '3px solid #fff',
+              }}
+              onClick={handleNextPage}
+              _active={{
+                outline: 'none',
+              }}
+              _focus={{
+                outline: 'none',
+              }}
+            >
+              {' '}
+              Ver mais postagens <Icon ml="0.4rem" as={ChevronDownIcon} />
+            </Button>
+          )}
         </Flex>
       </Flex>
       <Footer />
@@ -252,6 +315,12 @@ export const getStaticProps: GetStaticProps = async () => {
         banner: {
           url: post.data.banner.url,
         },
+        content: post.data.content.map(content => {
+          return {
+            heading: content.heading,
+            body: [...content.body],
+          };
+        }),
       },
     };
   });

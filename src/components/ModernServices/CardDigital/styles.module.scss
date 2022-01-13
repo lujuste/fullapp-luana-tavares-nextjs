@@ -70,7 +70,7 @@
   content: '';
   display: block;
   opacity: 0.7;
-  background-color: #690da6;
+
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 0px;
@@ -107,6 +107,7 @@
   -webkit-perspective: inherit;
   perspective: inherit;
   z-index: 2;
+  align-items: center;
 }
 
 .container .back {

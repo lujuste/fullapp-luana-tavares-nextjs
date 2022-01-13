@@ -1,6 +1,7 @@
 import styles from './styles.module.scss';
 import React, { useState } from 'react';
 import IconInstitucional from './IconInstitucional';
+import { Flex } from '@chakra-ui/react';
 
 export default function CardInstitucional({ title, description }) {
   const [hovered, setHovered] = useState(false);
@@ -17,6 +18,7 @@ export default function CardInstitucional({ title, description }) {
             <div className={styles.front}>
               <div className={styles.inner}>
                 <IconInstitucional />
+
                 <p> {title} </p>
               </div>
             </div>

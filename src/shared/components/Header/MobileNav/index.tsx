@@ -9,28 +9,24 @@ export default function MobileNav() {
 
   const menu = [
     {
-      page: 'Legal Design',
-      url: '/legaldesign',
-    },
-    {
-      page: 'Consultoria',
-      url: '/consultoria',
-    },
-    {
-      page: 'Treinamentos',
-      url: '/treinamentos',
-    },
-    {
-      page: 'Cursos',
-      url: '/cursos',
-    },
-    {
-      page: 'Blog',
-      url: '/blog',
-    },
-    {
-      page: 'Contrato automático',
+      page: 'Início',
       url: '/',
+    },
+    {
+      page: 'Novidades',
+      url: '/novidades',
+    },
+    {
+      page: 'Petições',
+      url: '/peticoes',
+    },
+    {
+      page: 'Curso',
+      url: 'https://luanatavaressp.com.br',
+    },
+    {
+      page: 'Contato',
+      url: '/contato',
     },
   ];
 
@@ -48,6 +44,7 @@ export default function MobileNav() {
         spacing={'7'}
         variants={container}
         initial="hidden"
+        fontFamily={'Raleway'}
         animate="visible"
       >
         {menu.map(index => (

@@ -18,10 +18,17 @@ import { getPrismicClient } from '../../services/prismic';
 import Prismic from '@prismicio/client';
 import { ptBR } from 'date-fns/locale';
 import { format } from 'date-fns';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import { useRouter } from 'next/router';
 import { RichText } from 'prismic-dom';
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@chakra-ui/icons';
 
 interface Post {
   first_publication_date?: string;
@@ -43,9 +50,23 @@ interface Post {
 
 interface PostProps {
   post: Post;
+  navigation: {
+    prevPost: {
+      uid: string;
+      data: {
+        title: string;
+      };
+    }[];
+    nextPost: {
+      uid?: string;
+      data: {
+        title: string;
+      };
+    }[];
+  };
 }
 
-export default function Post({ post }: PostProps) {
+export default function Post({ post, navigation }: PostProps) {
   const humanWordsPerMinute = 200;
   const titleWords = post?.data.title.split(' ').length;
 
@@ -102,7 +123,7 @@ export default function Post({ post }: PostProps) {
         align="center"
         py="7rem"
       >
-        <Flex maxW="1010px" w="100%" h="463px">
+        <Flex maxW={['500px', '500px', '1010px']} w="100%" h="463px">
           <Image
             src={post.data.banner.url}
             width={1010}
@@ -115,8 +136,9 @@ export default function Post({ post }: PostProps) {
         <Heading
           fontFamily="Raleway"
           maxW="1010px"
-          textAlign={'left'}
-          mt="2rem"
+          textAlign={['center', 'center', 'left']}
+          mt={['4rem', '4rem', '2rem']}
+          px={['1rem', '1rem', '0']}
         >
           {post?.data.title ? post.data.title : <Spinner color="pink.900" />}
         </Heading>
@@ -127,8 +149,9 @@ export default function Post({ post }: PostProps) {
           maxW="1010px"
           py="2rem"
           justify="space-between"
+          flexWrap={['wrap', 'wrap', 'nowrap']}
         >
-          <Flex mr="auto" align="center">
+          <Flex mx={['auto', 'auto', '0']} mr="auto" align="center">
             <Icon fontSize="1.2rem" as={timerIcon} />
             <Text mx="2"> {post?.first_publication_date} </Text>
             <Divider
@@ -141,12 +164,13 @@ export default function Post({ post }: PostProps) {
             <Icon fontSize="1.2rem" as={eyeIcon} />
             <Text ml="2"> {`${timeToRead} min de leitura`} </Text>
           </Flex>
-          <Flex align="center">
-            <Avatar
-              mx="3"
-              name="Dan Abrahmov"
-              src="https://bit.ly/dan-abramov"
-            />
+          <Flex
+            mt={['2rem', '2rem', '0']}
+            mx={['auto', 'auto', '0']}
+            mb={['-1rem']}
+            align="center"
+          >
+            <Avatar mx="3" name="Luana Tavares" src="/images/luanaAvatar.jpg" />
             <Text color="purple.900">Luana Tavares</Text>
           </Flex>
         </Flex>
@@ -154,7 +178,8 @@ export default function Post({ post }: PostProps) {
         <Text
           fontSize="1.125rem"
           lineHeight={1.8}
-          textAlign="justify"
+          px={['1rem', '1rem', '0']}
+          textAlign={['left', 'left', 'justify']}
           maxW="1010px"
           h="100%"
         >
@@ -163,7 +188,10 @@ export default function Post({ post }: PostProps) {
               <Flex flexDir="column" mx="auto" h="100%" w="100%" maxW="1010px">
                 <Heading
                   my="5"
-                  textAlign={'left'}
+                  mb={['2rem', '1rem', '0']}
+                  mt={['2rem', '2rem', '3rem']}
+                  px={['1.5rem', '1.5rem', '0']}
+                  textAlign={['center', 'center', 'left']}
                   fontSize="1.5rem"
                   color="black"
                   fontFamily={'Roboto'}
@@ -173,6 +201,7 @@ export default function Post({ post }: PostProps) {
                 <Flex
                   my="2"
                   w="100%"
+                  px={['1.5rem', '1.5rem', '0']}
                   maxW="1010px"
                   h="100%"
                   fontSize="1.125rem"
@@ -187,7 +216,98 @@ export default function Post({ post }: PostProps) {
             );
           })}
         </Text>
+        <Divider
+          mt="3rem"
+          maxW="980px"
+          mx="auto"
+          w="100%"
+          orientation="horizontal"
+        />
+        <Flex
+          mt={['0', '0', '3rem']}
+          justify="center"
+          align="center"
+          maxW="1200px"
+          mx="auto"
+          w="100%"
+        >
+          <Flex
+            ml="1rem"
+            flexWrap="wrap"
+            justify={['center', 'center', 'space-between']}
+            w="100%"
+          >
+            {navigation?.prevPost.length > 0 && (
+              <Flex flexDir="column">
+                <Link href={`/novidades/${navigation.prevPost[0].data.title}`}>
+                  <Heading
+                    cursor="pointer"
+                    textAlign={['left']}
+                    textOverflow="ellipsis"
+                    maxW="360px"
+                    fontSize="20px"
+                    color="purple.900"
+                  >
+                    {' '}
+                    {navigation.prevPost[0].data.title}{' '}
+                  </Heading>
+                </Link>
+                <Link href={`/novidades/${navigation.prevPost[0].data.title}`}>
+                  <Text
+                    mt="1rem"
+                    color="black"
+                    textAlign={['center', 'center', 'left']}
+                    fontWeight="bold"
+                  >
+                    <Icon mr="0.26rem" as={ChevronLeftIcon} />
+                    Post anterior{' '}
+                  </Text>
+                </Link>
+              </Flex>
+            )}
+
+            {navigation?.nextPost.length > 0 && (
+              <Flex mr="1rem" flexDir="column" justify="space-around">
+                <Link href={`/novidades/${navigation.nextPost[0].data.title}`}>
+                  <Heading
+                    color="purple.500"
+                    cursor="pointer"
+                    mr="auto"
+                    mt={['2rem', '3rem', '0rem', '0', '0']}
+                    textAlign={['center', 'center', 'center', 'right']}
+                    maxW="360px"
+                    textOverflow="ellipsis"
+                    fontSize="20px"
+                  >
+                    {' '}
+                    {navigation.nextPost[0].data.title}{' '}
+                  </Heading>
+                </Link>
+                <Link href={`/novidades/${navigation.nextPost[0].data.title}`}>
+                  <Text
+                    mt="1rem"
+                    color="black"
+                    fontWeight="bold"
+                    cursor="pointer"
+                    textAlign={['center', 'center', 'right']}
+                  >
+                    Próximo post <Icon as={ChevronRightIcon} />
+                  </Text>
+                </Link>
+              </Flex>
+            )}
+          </Flex>
+        </Flex>
+
+        <Divider
+          mt="3rem"
+          maxW="980px"
+          mx="auto"
+          w="100%"
+          orientation="horizontal"
+        />
       </Flex>
+
       <Footer />
     </>
   );
@@ -219,6 +339,27 @@ export const getStaticProps: GetStaticProps = async context => {
   //@ts-ignore
   const response = await prismic.getByUID('publications', String(slug), {});
 
+  const prevPost = await prismic.query(
+    [Prismic.Predicates.at('document.type', 'publications')],
+    {
+      pageSize: 1,
+      after: response.id,
+      orderings: '[document.first_publication_date]',
+    }
+  );
+
+  const nextPost = await prismic.query(
+    [Prismic.Predicates.at('document.type', 'publications')],
+    {
+      pageSize: 1,
+      after: response.id,
+      orderings: '[document.last_publication_date desc]',
+    }
+  );
+
+  console.log(nextPost, 'proximo post');
+  console.log(prevPost, 'anterior post');
+
   const post = {
     uid: response.uid,
     first_publication_date: format(
@@ -246,7 +387,11 @@ export const getStaticProps: GetStaticProps = async context => {
   return {
     props: {
       post,
+      navigation: {
+        prevPost: prevPost?.results,
+        nextPost: nextPost?.results,
+      },
     },
-    revalidate: 60 * 60,
+    revalidate: 60 * 60, // 1hour
   };
 };

@@ -103,7 +103,7 @@ const Home = ({ postsPagination }: HomeProps): JSX.Element => {
     };
   });
 
-  console.log(newPosts, 'testando');
+  console.log(newPosts, 'testando2');
 
   return (
     <>

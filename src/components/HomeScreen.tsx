@@ -7,6 +7,7 @@ import {
   useBreakpointValue,
   HTMLChakraProps,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 import Reveal from 'react-reveal/Reveal';
 import Fade from 'react-reveal/Fade';
@@ -198,18 +199,23 @@ export default function HomeScreen() {
 
         <Flex position="fixed" zIndex={'99999'} right="0" top="89.5%">
           <Reveal>
-            <MotionFlex
-              initial={{ scale: 1, opacity: 1 }}
-              animate={{ scale: 0.9, opacity: 1 }}
-              transition={{ repeat: Infinity, duration: 1, ease: 'easeIn' }}
-              position="fixed"
-              cursor="pointer"
-              right="0"
-              top={['90vh']}
-              zIndex="100000"
+            <NextLink
+              href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+              passHref
             >
-              <FloatWhatsapp />
-            </MotionFlex>
+              <MotionFlex
+                initial={{ scale: 1, opacity: 1 }}
+                animate={{ scale: 0.9, opacity: 1 }}
+                transition={{ repeat: Infinity, duration: 1, ease: 'easeIn' }}
+                position="fixed"
+                cursor="pointer"
+                right="0"
+                top={['90vh']}
+                zIndex="100000"
+              >
+                <FloatWhatsapp />
+              </MotionFlex>
+            </NextLink>
           </Reveal>
         </Flex>
       </Flex>

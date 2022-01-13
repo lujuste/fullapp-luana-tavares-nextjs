@@ -33,7 +33,7 @@ export default function WhoIsLuana() {
           </Reveal>
 
           <BiographyItem
-            image="/images/fotoLuana1.jpg"
+            image="/images/fotoluana1.jpg"
             flexDir={['column', 'column', 'column', 'row']}
             paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro
           emprego foi como montadora de sacolas de papelão em uma fábrica, 8
@@ -48,7 +48,7 @@ export default function WhoIsLuana() {
           completamente."
           />
           <BiographyItem
-            image="/images/fotoLuana2.jpg"
+            image="/images/fotoluana2.jpg"
             flexDir={['column', 'column', 'column', 'row-reverse']}
             paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro
           emprego foi como montadora de sacolas de papelão em uma fábrica, 8

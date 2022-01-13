@@ -8,6 +8,7 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import { Input } from '../../shared/components/Form/Input';
 import Image from 'next/image';
 import Header from '../../shared/components/Header';
@@ -77,32 +78,34 @@ export default function Contact() {
           >
             Quer ajudar a modernizar o Brasil?
           </Heading>
-          <Button
-            mt="3rem"
-            mx="2rem"
-            w={['160px', '160px', '200px']}
-            h={['45px', '45px', '60px', '60px']}
-            fontFamily="Roboto"
-            bgColor="#690da6"
-            color="white"
-            borderRadius="0"
-            boxShadow="2xl"
-            _hover={{
-              background: 'white',
-              color: '#690da6',
-              border: '1px solid #690da6',
-            }}
-            _focus={{
-              border: 'none',
-              outline: 'transparent',
-            }}
-            _active={{
-              border: 'none',
-              outline: 'transparent',
-            }}
-          >
-            Assinar petições
-          </Button>
+          <NextLink href="/peticoes" passHref>
+            <Button
+              mt="3rem"
+              mx="2rem"
+              w={['160px', '160px', '200px']}
+              h={['45px', '45px', '60px', '60px']}
+              fontFamily="Roboto"
+              bgColor="#690da6"
+              color="white"
+              borderRadius="0"
+              boxShadow="2xl"
+              _hover={{
+                background: 'white',
+                color: '#690da6',
+                border: '1px solid #690da6',
+              }}
+              _focus={{
+                border: 'none',
+                outline: 'transparent',
+              }}
+              _active={{
+                border: 'none',
+                outline: 'transparent',
+              }}
+            >
+              Assinar petições
+            </Button>
+          </NextLink>
         </Flex>
         <Flex
           mt={['4rem', '4rem', '0']}

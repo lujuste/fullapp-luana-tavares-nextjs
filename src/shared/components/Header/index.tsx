@@ -12,6 +12,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import imgLogoMobile from '/images/luanaLogo.png';
+import { isSafari, isMobileSafari } from 'react-device-detect';
 
 import headerLogo from '../../../../public/images/luanaLogo3.svg';
 
@@ -93,7 +95,14 @@ export default function Header() {
             >
               <Flex align="center" mt="1.3rem" cursor="pointer">
                 <Link href="/" passHref>
-                  <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
+                  {isSafari || isMobileSafari ? (
+                    <img
+                      src="/images/luanaLogo2.png"
+                      alt="Logo luana tavares"
+                    />
+                  ) : (
+                    <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
+                  )}
                 </Link>
               </Flex>
 
@@ -207,7 +216,11 @@ export default function Header() {
           >
             <Flex align="center" mt="1.3rem" cursor="pointer">
               <Link href="/" passHref>
-                <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
+                {isSafari || isMobileSafari ? (
+                  <img src="/images/luanaLogo2.png" alt="Logo luana tavares" />
+                ) : (
+                  <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
+                )}
               </Link>
             </Flex>
 

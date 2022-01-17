@@ -136,7 +136,7 @@ export default function News({ posts }: any) {
             boxShadow="sm"
             mb="4rem"
           >
-            <Reveal>Blog</Reveal>
+            <Reveal>Novidades</Reveal>
           </Heading>
 
           <Grid

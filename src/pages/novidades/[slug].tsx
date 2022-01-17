@@ -71,8 +71,8 @@ export default function Post({ post, navigation }: PostProps) {
   const titleWords = post?.data.title.split(' ').length;
 
   const totalWords = post?.data.content.reduce((acc, content) => {
-    const headingWords = content.heading
-      ? content.heading.split(' ').length
+    const headingWords = content?.heading
+      ? content?.heading.split(' ').length
       : 0;
     const bodyWords = RichText.asText(content.body).split(' ').length;
     // eslint-disable-next-line no-param-reassign
@@ -188,7 +188,7 @@ export default function Post({ post, navigation }: PostProps) {
               <Flex flexDir="column" mx="auto" h="100%" w="100%" maxW="1010px">
                 <Heading
                   my="5"
-                  mb={['2rem', '1rem', '0']}
+                  mb={['2rem', '1rem', '0rem']}
                   mt={['2rem', '2rem', '3rem']}
                   px={['1.5rem', '1.5rem', '0']}
                   textAlign={['center', 'center', 'left']}
@@ -199,6 +199,7 @@ export default function Post({ post, navigation }: PostProps) {
                   {content.heading}
                 </Heading>
                 <Flex
+                  className={'containerBlog'}
                   my="2"
                   w="100%"
                   px={['1.5rem', '1.5rem', '0']}

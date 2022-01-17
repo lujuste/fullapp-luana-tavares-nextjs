@@ -118,7 +118,7 @@ export default function Header() {
                     <NavigationItem label="Novidades" href="/novidades" />
                     <NavigationItem label="Petições" href="/peticoes" />
                     <NavigationItem
-                      label="Curso"
+                      label="Conecta"
                       href="https://luanatavaressp.com.br/"
                     />
                     <NavigationItem label="Contato" href="/contato" />
@@ -236,7 +236,7 @@ export default function Header() {
                   <NavigationItem label="Novidades" href="/novidades" />
                   <NavigationItem label="Petições" href="/peticoes" />
                   <NavigationItem
-                    label="Curso"
+                    label="Conecta"
                     href="https://luanatavaressp.com.br/"
                   />
                   <NavigationItem label="Contato" href="/contato" />

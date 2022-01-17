@@ -21,6 +21,9 @@ import LocationIcon from './icons/LocationIcon';
 import IconInstagram from './icons/IconInstagram';
 import IconFacebook from './icons/IconFacebook';
 import IconLinkedin from './icons/IconLinkedin';
+import IconYoutube from '../../../public/images/iconYoutube.svg';
+
+import spotifyIcon from '../../../public/images/spotify2.svg';
 
 import NextLink from 'next/link';
 
@@ -124,12 +127,14 @@ export default function Footer() {
                 gap={20}
               >
                 <Flex justify="space-around" flexDir="column">
-                  <Flex mt="-2rem" ml="-1.5rem">
-                    <Icon as={headerLogo} fontSize="10rem" />
+                  <Flex mt="-2rem" ml="0.7rem">
+                    <NextLink href="/" passHref>
+                      <Icon cursor="pointer" as={headerLogo} fontSize="10rem" />
+                    </NextLink>
                   </Flex>
                   <Flex
-                    mt="-7.5rem"
-                    maxW="100px"
+                    mt="-4.5rem"
+                    maxW="180px"
                     w="100%"
                     justify="space-between"
                   >
@@ -137,7 +142,7 @@ export default function Footer() {
                       href="https://www.instagram.com/luana.tavaressp/"
                       passHref
                     >
-                      <Box cursor="pointer">
+                      <Box _hover={{ opacity: 0.6 }} cursor="pointer">
                         <IconInstagram />
                       </Box>
                     </NextLink>
@@ -145,7 +150,7 @@ export default function Footer() {
                       passHref
                       href="https://www.facebook.com/luana.tavaressp/"
                     >
-                      <Box cursor="pointer">
+                      <Box _hover={{ opacity: 0.6 }} cursor="pointer">
                         <IconFacebook />
                       </Box>
                     </NextLink>
@@ -153,8 +158,28 @@ export default function Footer() {
                       href="https://www.linkedin.com/in/luana-tavares-/"
                       passHref
                     >
-                      <Box cursor="pointer">
+                      <Box _hover={{ opacity: 0.6 }} cursor="pointer">
                         <IconLinkedin />
+                      </Box>
+                    </NextLink>
+                    <NextLink
+                      href="https://open.spotify.com/show/1AI4vSnHDfzFnQt5NVy2gn"
+                      passHref
+                    >
+                      <Box _hover={{ opacity: 0.6 }} cursor="pointer">
+                        <Icon as={spotifyIcon} fontSize="1.5rem" />
+                      </Box>
+                    </NextLink>
+                    <NextLink
+                      href="https://www.youtube.com/channel/UCdRbexOJS7fcvA3OU-8-a0g"
+                      passHref
+                    >
+                      <Box
+                        transition="2ms ease"
+                        _hover={{ opacity: 0.6 }}
+                        cursor="pointer"
+                      >
+                        <Icon as={IconYoutube} fontSize="1.5rem" />
                       </Box>
                     </NextLink>
                   </Flex>
@@ -169,8 +194,16 @@ export default function Footer() {
                       Navegação
                     </ListItem>
 
-                    <ListItem mb="1rem">Novidades</ListItem>
-                    <ListItem mb="1rem">Petições</ListItem>
+                    <NextLink href="/novidades" passHref>
+                      <ListItem cursor="pointer" mb="1rem">
+                        Novidades
+                      </ListItem>
+                    </NextLink>
+                    <NextLink href="/peticoes" passHref>
+                      <ListItem cursor="pointer" mb="1rem">
+                        Petições
+                      </ListItem>
+                    </NextLink>
                   </List>
                 </Flex>
                 <GridItem mt="1.5rem">
@@ -178,8 +211,16 @@ export default function Footer() {
                     <ListItem mb="1rem" fontFamily="Raleway" fontWeight="700">
                       Outros
                     </ListItem>
-                    <ListItem mb="1rem">Curso</ListItem>
-                    <ListItem mb="1rem">Contato</ListItem>
+                    <NextLink href="https://luanatavaressp.com.br" passHref>
+                      <ListItem cursor="pointer" mb="1rem">
+                        Conecta
+                      </ListItem>
+                    </NextLink>
+                    <NextLink href="/contato" passHref>
+                      <ListItem cursor="pointer" mb="1rem">
+                        Contato
+                      </ListItem>
+                    </NextLink>
                   </List>
                 </GridItem>
                 <GridItem>
@@ -268,8 +309,16 @@ export default function Footer() {
                   orientation="horizontal"
                 />
                 <List color="white">
-                  <ListItem mt="1rem">Novidades</ListItem>
-                  <ListItem mt="1rem">Cursos</ListItem>
+                  <NextLink href="/novidades">
+                    <ListItem cursor="pointer" mt="1rem">
+                      Novidades
+                    </ListItem>
+                  </NextLink>
+                  <NextLink href="https://luanatavaressp.com.br/">
+                    <ListItem cursor="pointer" mt="1rem">
+                      Conecta
+                    </ListItem>
+                  </NextLink>
                 </List>
               </Flex>
               <Flex flexDir="column">
@@ -288,8 +337,14 @@ export default function Footer() {
                   orientation="horizontal"
                 />
                 <List color="white">
-                  <ListItem mt="1rem">Petições</ListItem>
-                  <ListItem>Contato</ListItem>
+                  <NextLink href="/peticoes" passHref>
+                    <ListItem cursor="pointer" mt="1rem">
+                      Petições
+                    </ListItem>
+                  </NextLink>
+                  <NextLink passHref href="/contato">
+                    <ListItem cursor="pointer">Contato</ListItem>
+                  </NextLink>
                 </List>
               </Flex>
             </Flex>
@@ -328,7 +383,7 @@ export default function Footer() {
             </Flex>
             <Flex
               mx="auto"
-              maxW="100px"
+              maxW="200px"
               w="100%"
               justifyContent="space-between"
             >
@@ -336,7 +391,12 @@ export default function Footer() {
                 href="https://www.instagram.com/luana.tavaressp/"
                 passHref
               >
-                <Box cursor="pointer">
+                <Box
+                  hover={{
+                    opacity: 0.1,
+                  }}
+                  cursor="pointer"
+                >
                   <IconInstagram />
                 </Box>
               </NextLink>
@@ -354,6 +414,22 @@ export default function Footer() {
               >
                 <Box cursor="pointer">
                   <IconLinkedin />
+                </Box>
+              </NextLink>
+              <NextLink
+                href="https://open.spotify.com/show/1AI4vSnHDfzFnQt5NVy2gn"
+                passHref
+              >
+                <Box cursor="pointer">
+                  <Icon as={spotifyIcon} fontSize="1.5rem" />
+                </Box>
+              </NextLink>
+              <NextLink
+                href="https://www.youtube.com/channel/UCdRbexOJS7fcvA3OU-8-a0g"
+                passHref
+              >
+                <Box cursor="pointer">
+                  <Icon as={IconYoutube} fontSize="1.5rem" />
                 </Box>
               </NextLink>
             </Flex>

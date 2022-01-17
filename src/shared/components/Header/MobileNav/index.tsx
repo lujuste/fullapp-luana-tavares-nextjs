@@ -21,7 +21,7 @@ export default function MobileNav() {
       url: '/peticoes',
     },
     {
-      page: 'Curso',
+      page: 'Conecta',
       url: 'https://luanatavaressp.com.br',
     },
     {

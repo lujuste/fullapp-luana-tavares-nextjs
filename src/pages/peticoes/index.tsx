@@ -51,7 +51,7 @@ export default function Petitions() {
                 _hover={{ color: 'pink.500' }}
                 cursor="pointer"
               >
-                Inscreva-se para participar da Conecta: aceleradora de Mulheres
+                Inscreva-se para participar da Conecta: aceleradora de mulheres
                 na política.
               </Text>
               <Text

@@ -36,7 +36,7 @@ export default function BiographyItem({
           h="auto"
           fontSize={['18', '18', '18']}
           fontFamily="Roboto"
-          lineHeight={1.6}
+          lineHeight={1.8}
           fontWeight="400"
           p={['5', '5', 0]}
           mt={['10', '10', '10']}

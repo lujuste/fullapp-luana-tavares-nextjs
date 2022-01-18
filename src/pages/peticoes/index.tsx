@@ -25,11 +25,10 @@ export default function Petitions() {
             py="2"
             maxH="60px"
             mx="auto"
-            mt={['11rem', '11rem', '10rem']}
+            mt={['8rem', '8rem', '9rem']}
             fontFamily="Raleway"
             boxShadow="2xl"
-            mb="2rem"
-            fontSize={['24px', '24px', '36px']}
+            mb={['1rem', '1rem', '2rem']}
           >
             Petições
           </Heading>

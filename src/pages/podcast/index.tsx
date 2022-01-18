@@ -82,11 +82,10 @@ export default function Podcast() {
           py="2"
           maxH="60px"
           mx="auto"
-          mt={['7rem', '7rem', '7rem']}
+          mt={['5.5rem', '5.5rem', '7rem']}
           fontFamily="Raleway"
           boxShadow="sm"
-          mb="2rem"
-          fontSize={['24px', '24px', '36px']}
+          mb={['1rem', '1rem', '3rem']}
         >
           Podcast
         </Heading>

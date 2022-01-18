@@ -122,7 +122,7 @@ export default function Contact() {
           w="100%"
         >
           <Heading
-            mt="1.5rem"
+            mt={['0', '0', '1.5rem']}
             fontSize={['32px', '32px', '48px']}
             fontWeight="bold"
             mx="auto"

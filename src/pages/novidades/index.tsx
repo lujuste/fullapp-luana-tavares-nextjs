@@ -142,12 +142,12 @@ export default function News({ postsPagination }: HomeProps): JSX.Element {
           px="8"
           py="2"
           mx="auto"
-          mt="5rem"
+          mt={['2.5rem', '2.5rem', '5rem']}
           fontFamily="Raleway"
           boxShadow="2xl"
-          mb="4rem"
+          mb={['2.5rem', '2.5rem', '4rem']}
         >
-          Blog
+          Novidades
         </Heading>
         <Grid
           mx="auto"

@@ -13,6 +13,7 @@ import { ptBR } from 'date-fns/locale';
 import { format } from 'date-fns';
 import ModernServices from '../components/ModernServices';
 import { RichText } from 'prismic-dom';
+import Head from 'next/head';
 
 interface Post {
   uid?: string;
@@ -107,6 +108,35 @@ const Home = ({ postsPagination }: HomeProps): JSX.Element => {
 
   return (
     <>
+      <Head>
+        <title>Luana Tavares - Não podemos desistir do brasil </title>
+        <meta
+          name="description"
+          content="Luana Tavares é especialista em Políticas Públicas e Ativista para modernização do Estado, Administradora, publicitária e desenvolvedora de lideranças."
+        />
+        <meta charSet="utf-8" />
+        <meta
+          property="og:title"
+          content="Rede de Mulheres Brasileiras Líderes pela Política"
+          key="ogtitle"
+        />
+        +{' '}
+        <meta
+          property="og:description"
+          content="Luana Tavares é especialista em Políticas Públicas e Ativista para modernização do Estado, Administradora, publicitária e desenvolvedora de lideranças."
+          key="ogdesc"
+        />
+        <meta
+          property="og:url"
+          content={'https://www.luanatavaressp.com.br'}
+          key="ogurl"
+        />
+        <meta
+          property="og:site_name"
+          content="Luana Tavares é especialista em Políticas Públicas e Ativista para modernização do Estado, Administradora, publicitária e desenvolvedora de lideranças."
+          key="ogsitename"
+        />
+      </Head>
       <Header />
       <HomeScreen />
       <News posts={newPosts} />

@@ -109,7 +109,7 @@ export default function Podcast() {
           >
             {spotifyData.map(episode => (
               <MotionGridItem
-                _hover={{ boxShadow: '2xl' }}
+                _hover={{ boxShadow: '2xl', borderRadius: '20px' }}
                 cursor="pointer"
                 whileHover={{ scale: 1.04 }}
               >

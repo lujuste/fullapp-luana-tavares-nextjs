@@ -14,7 +14,8 @@ export default function WhoIsLuana() {
           h="100%"
           bgColor="purple.900"
           flexDir="column"
-          py="5rem"
+          py="1rem"
+          pt="4rem"
         >
           <Reveal>
             <Heading

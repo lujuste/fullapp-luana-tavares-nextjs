@@ -16,7 +16,9 @@ export default function CardInstitucional({ title, description }) {
           <div className={styles.container}>
             <div className={styles.front}>
               <div className={styles.inner}>
-                <IconCardRebuild />
+                <div className={styles.forceicon}>
+                  <IconCardRebuild />
+                </div>
                 <p> {title} </p>
               </div>
             </div>

@@ -4,12 +4,14 @@ import {
   Button,
   useBreakpointValue,
   Spinner,
+  Icon,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { Input } from '../../shared/components/Form/Input';
 import luanaFoto from '../../../public/images/luana-foto.jpg';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
+import { ChatIcon } from '@chakra-ui/icons';
 
 import NextLink from 'next/link';
 
@@ -71,18 +73,21 @@ export default function FormView() {
           fontWeight="700"
           px="2rem"
           color="white"
-          mt="5rem"
+          mt={['2.6rem', '2.6rem', '5rem']}
         >
           Quer ajudar a modernizar o Brasil?
         </Heading>
-        <NextLink href="/peticoes" passHref>
+        <NextLink
+          href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+          passHref
+        >
           <Button
             id="form-control"
             mt="3rem"
             mx="2rem"
             w={['160px', '160px', '200px']}
             h={['45px', '45px', '60px', '60px']}
-            fontFamily="Roboto"
+            fontFamily="Raleway"
             bgColor="#690da6"
             color="white"
             borderRadius="0"
@@ -101,7 +106,7 @@ export default function FormView() {
               outline: 'transparent',
             }}
           >
-            Assinar petições
+            <Icon mr="10px" as={ChatIcon} /> Fale comigo!
           </Button>
         </NextLink>
       </Flex>

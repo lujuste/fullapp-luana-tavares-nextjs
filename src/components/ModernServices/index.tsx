@@ -14,6 +14,8 @@ import Reveal from 'react-reveal';
 
 import { useState, useEffect } from 'react';
 
+import NextLink from 'next/link';
+
 import CardDigital from './CardDigital';
 import CardInstitucional from './CardInstitucional';
 import CardRebuild from './CardRebuild';
@@ -109,7 +111,10 @@ export default function ModernServices() {
                 <ConsultancyIcon />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero participar da transformação" />
+              <ButtonCards
+                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                callToAction="Quero participar da transformação"
+              />
             </Flex>{' '}
             <Flex mt="3rem" flexDir="column">
               <CardMobile
@@ -120,7 +125,10 @@ export default function ModernServices() {
                 <IconTrainning />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero participar da reforma" />
+              <ButtonCards
+                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                callToAction="Quero participar da reforma"
+              />
             </Flex>
             <Flex mt="3rem" flexDir="column">
               <CardMobile
@@ -131,7 +139,10 @@ export default function ModernServices() {
                 <IconCourses />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero participar da reforma" />
+              <ButtonCards
+                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                callToAction="Quero participar da reforma"
+              />
             </Flex>
             <Flex mb="3rem" mt="3rem" flexDir="column">
               <CardMobile
@@ -142,7 +153,10 @@ export default function ModernServices() {
                 <IconContract />
               </CardMobile>
 
-              <ButtonCards callToAction="Quero participar da mudança" />
+              <ButtonCards
+                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                callToAction="Quero participar da mudança"
+              />
             </Flex>
           </Flex>
         </>
@@ -207,7 +221,10 @@ export default function ModernServices() {
                   description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero participar da transformação" />
+                  <ButtonCards
+                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                    callToAction="Quero participar da transformação"
+                  />
                 </Flex>
               </GridItem>
 
@@ -217,7 +234,10 @@ export default function ModernServices() {
                   description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero participar da reforma" />
+                  <ButtonCards
+                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                    callToAction="Quero participar da reforma"
+                  />
                 </Flex>
               </GridItem>
 
@@ -227,7 +247,10 @@ export default function ModernServices() {
                   description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when,"
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero participar da reforma" />
+                  <ButtonCards
+                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                    callToAction="Quero participar da reforma"
+                  />
                 </Flex>
               </GridItem>
 
@@ -237,7 +260,10 @@ export default function ModernServices() {
                   description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                 />
                 <Flex>
-                  <ButtonCards callToAction="Quero participar da mudança" />
+                  <ButtonCards
+                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                    callToAction="Quero participar da mudança"
+                  />
                 </Flex>
               </GridItem>
             </Grid>

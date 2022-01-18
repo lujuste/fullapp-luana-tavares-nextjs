@@ -176,7 +176,7 @@ export default function News({ posts }: any) {
                         <Box
                           px="5"
                           w="100%"
-                          h="167px"
+                          h="197px"
                           justifyContent="flex-end"
                           bgColor="white"
                         >
@@ -189,10 +189,10 @@ export default function News({ posts }: any) {
                             {post.data.title}
                           </Heading>
 
-                          <Flex mb="1rem" alignSelf="initial">
+                          <Flex w="100%" mb="1rem" alignSelf="initial">
                             <Flex mt="2rem" align="center">
                               <Icon fontSize="1.2rem" as={timerIcon} />
-                              <Text ml="2">
+                              <Text fontSize={['12px', '12px', '15px']} ml="2">
                                 {' '}
                                 {post.first_publication_date}{' '}
                               </Text>
@@ -200,13 +200,13 @@ export default function News({ posts }: any) {
                                 ml="1.4rem"
                                 borderColor="purple.900"
                                 orientation="vertical"
-                                mr="-1rem"
+                                mr={['-1rem']}
                               />
                             </Flex>
-                            <Flex></Flex>
+
                             <Flex ml="2rem" mt="2rem" align="center">
                               <Icon fontSize="1.2rem" as={eyeIcon} />
-                              <Text ml="2">
+                              <Text fontSize={['12px', '12px', '15px']} ml="2">
                                 {post.data.readTime} min de leitura
                               </Text>
                             </Flex>
@@ -229,13 +229,22 @@ export default function News({ posts }: any) {
                             name="Luana Tavares"
                             src="/images/luanaAvatar.jpg"
                           />
-                          <Text ml="5" color="purple.500">
+                          <Text
+                            fontSize={['12px', '12px', '15px']}
+                            ml="5"
+                            color="purple.500"
+                          >
                             {' '}
                             Luana Tavares{' '}
                           </Text>
                         </Flex>
                         <Flex align="center">
-                          <Text ml="auto" color="purple.500" fontWeight="700">
+                          <Text
+                            fontSize={['12px', '12px', '15px']}
+                            ml="auto"
+                            color="purple.500"
+                            fontWeight="700"
+                          >
                             Ler artigo
                           </Text>
                           <Icon
@@ -267,6 +276,14 @@ export default function News({ posts }: any) {
                   backgroundColor: 'transparent',
                   color: 'purple.900',
                   border: 'solid 1px #690da6',
+                }}
+                _active={{
+                  border: 'transparent',
+                  outline: 'transparent',
+                }}
+                _focus={{
+                  border: 'transparent',
+                  outline: 'transparent',
                 }}
               >
                 {' '}

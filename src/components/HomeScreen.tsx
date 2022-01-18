@@ -73,7 +73,7 @@ export default function HomeScreen() {
         >
           <Reveal>
             <Heading
-              mt={['10rem', '10rem', '0']}
+              mt={['8rem', '8rem', '0']}
               fontSize={['32px', '32px', '38px', '46px', '72px']}
               fontFamily="Raleway"
               fontWeight="400"
@@ -95,7 +95,7 @@ export default function HomeScreen() {
           <Reveal>
             <Text
               color="white"
-              fontSize={['16px', '16px', '20px']}
+              fontSize={['14px', '15px', '20px']}
               fontWeight="400"
               fontFamily="Roboto"
               mb="2rem"
@@ -132,6 +132,7 @@ export default function HomeScreen() {
                   fontSize={['14px', '14px', '20px']}
                   height="50px"
                   type="button"
+                  mb={['4rem', '3rem', 0]}
                   onClick={() => router.push('/#form-control')}
                   borderRadius="none"
                   bgColor="pink.300"
@@ -155,29 +156,32 @@ export default function HomeScreen() {
               </Reveal>
             </Flex>
             <Reveal>
-              <Button
-                ml="2rem"
-                mt="0.5rem"
-                onClick={() => router.push('/#section-home')}
-                _hover={{
-                  background: 'transparent',
-                  color: 'white',
-                }}
-                _focus={{
-                  background: 'transparent',
-                  color: 'white',
-                }}
-                _active={{
-                  border: 'none',
-                  outline: 'transparent',
-                }}
-                bgColor="transparent"
-                fontWeight="400"
-                color="white"
-                fontSize="16px"
-              >
-                Saiba mais <ChevronDownIcon boxSize="25px" />
-              </Button>
+              {!isMobile && (
+                <Button
+                  ml="2rem"
+                  mt="0.5rem"
+                  mb="2rem"
+                  onClick={() => router.push('/#section-home')}
+                  _hover={{
+                    background: 'transparent',
+                    color: 'white',
+                  }}
+                  _focus={{
+                    background: 'transparent',
+                    color: 'white',
+                  }}
+                  _active={{
+                    border: 'none',
+                    outline: 'transparent',
+                  }}
+                  bgColor="transparent"
+                  fontWeight="400"
+                  color="white"
+                  fontSize="16px"
+                >
+                  Saiba mais <ChevronDownIcon boxSize="25px" />
+                </Button>
+              )}
             </Reveal>
           </Flex>
         </Flex>

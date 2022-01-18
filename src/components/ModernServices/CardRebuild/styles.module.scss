@@ -109,6 +109,11 @@
   z-index: 2;
 }
 
+svg.css-znrhya {
+  top: 100%;
+  left: 10%;
+}
+
 .container .back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
@@ -149,4 +154,10 @@
 .front .inner svg {
   margin-left: 4.5rem;
   margin-top: 1rem;
+}
+
+.forceicon {
+  svg {
+    margin-left: 1rem;
+  }
 }

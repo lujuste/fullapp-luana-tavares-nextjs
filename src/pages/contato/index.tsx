@@ -1,9 +1,10 @@
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { ChatIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
   Flex,
   Heading,
+  Icon,
   Spinner,
   Text,
   useBreakpointValue,
@@ -44,7 +45,7 @@ export default function Contact() {
 
       <Flex
         maxW="1440px"
-        pt={['8rem']}
+        pt={['4rem', '4rem', '8rem']}
         h={['100%', '100%', '100%', '100%', '100%']}
         mb={['5rem', '5rem', '2rem']}
         mx="auto"
@@ -74,7 +75,7 @@ export default function Contact() {
             fontWeight="700"
             px="2rem"
             color="white"
-            mt="5rem"
+            mt={['2.4rem', '2.4rem', '5rem']}
           >
             Quer ajudar a modernizar o Brasil?
           </Heading>
@@ -84,7 +85,8 @@ export default function Contact() {
               mx="2rem"
               w={['160px', '160px', '200px']}
               h={['45px', '45px', '60px', '60px']}
-              fontFamily="Roboto"
+              fontFamily="Raleway"
+              fontSize={['14px', '14px', '16px']}
               bgColor="#690da6"
               color="white"
               borderRadius="0"
@@ -103,7 +105,8 @@ export default function Contact() {
                 outline: 'transparent',
               }}
             >
-              Assinar petições
+              <Icon fontSize="0.85rem" mr="6px" as={ChatIcon} /> Assinar
+              petições
             </Button>
           </NextLink>
         </Flex>

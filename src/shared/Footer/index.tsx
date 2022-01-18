@@ -247,6 +247,9 @@ export default function Footer() {
                       id="email"
                       name="email"
                       type="email"
+                      _hover={{
+                        bgColor: 'white',
+                      }}
                       borderRadius="0"
                       label="Seu email"
                       {...register('email')}
@@ -292,7 +295,7 @@ export default function Footer() {
             mx="auto"
             flexDir={['column']}
           >
-            <Flex mt="1.5rem" justify="space-around">
+            <Flex px="2.5rem" mt="1.5rem" justify="space-between">
               <Flex flexDir="column">
                 <Heading
                   mb="0.5rem"
@@ -343,12 +346,19 @@ export default function Footer() {
                     </ListItem>
                   </NextLink>
                   <NextLink passHref href="/contato">
-                    <ListItem cursor="pointer">Contato</ListItem>
+                    <ListItem mt={['1rem', '1rem', 0]} cursor="pointer">
+                      Contato
+                    </ListItem>
                   </NextLink>
                 </List>
               </Flex>
             </Flex>
-            <Flex as="form" onSubmit={handleSubmit(onSubmit)} flexDir="column">
+            <Flex
+              px="2rem"
+              as="form"
+              onSubmit={handleSubmit(onSubmit)}
+              flexDir="column"
+            >
               <Heading
                 mt="3.5rem"
                 fontFamily="Raleway"
@@ -363,6 +373,9 @@ export default function Footer() {
                 id="email"
                 name="email"
                 type="email"
+                _hover={{
+                  bgColor: 'white',
+                }}
                 label="Seu email"
                 h="60px"
                 {...register('email')}

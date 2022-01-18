@@ -174,7 +174,7 @@ export default function ModernServices() {
             <>
               <Heading
                 mb="3rem"
-                mt={['-2rem', '-2rem', '0rem', '2rem']}
+                mt={['-2rem', '-2rem', '0rem', '0rem']}
                 textAlign="center"
                 fontFamily="Raleway"
                 fontSize={['30px', '30px', '38px', '42px', '48px']}

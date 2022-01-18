@@ -66,7 +66,7 @@ export default function FormView() {
         w="100%"
         maxW={['700px']}
         flexDir="column"
-        mt={['5rem', '5rem', '0']}
+        mt={['3rem', '3rem', '0']}
       >
         <Reveal>
           <Heading

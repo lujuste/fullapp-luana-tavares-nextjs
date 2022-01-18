@@ -17,7 +17,7 @@ export default async function GetUser(
       {
         title: 'EP 00 - MANIFESTO',
         description:
-          'O Poder está em suas mãos” é um podcast para debater assuntos muito importantes com Luana Tavares, mestre em políticas públicas pela Universidade de Oxford. Entre as pautas falaremos sobre carreira com propósito, modernização dos serviços públicos, participação cívica, liderança feminina, além dos principais assuntos que estão sendo debatidos no Congresso Nacional.',
+          '"O Poder está em suas mãos” é um podcast para debater assuntos muito importantes com Luana Tavares, mestre em políticas públicas pela Universidade de Oxford. Entre as pautas falaremos sobre carreira com propósito, modernização dos serviços públicos, participação cívica, liderança feminina, além dos principais assuntos que estão sendo debatidos no Congresso Nacional.',
         href: 'https://open.spotify.com/episode/2fFpDxATWAN3NLxTTqSp2f',
         image: '/images/',
       },
@@ -62,7 +62,7 @@ export default async function GetUser(
     ];
 
     //@ts-ignore
-    return res.status(200);
+    return res.status(200).send(spotifyData);
   } catch (err) {
     console.log(err.message, 'deu erro');
   }

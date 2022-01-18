@@ -21,6 +21,10 @@ export default function MobileNav() {
       url: '/peticoes',
     },
     {
+      page: 'Podcast',
+      url: '/podcast',
+    },
+    {
       page: 'Conecta',
       url: 'https://luanatavaressp.com.br',
     },

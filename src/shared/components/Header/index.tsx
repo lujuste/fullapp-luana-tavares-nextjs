@@ -111,12 +111,13 @@ export default function Header() {
                   <Flex
                     ml="7rem"
                     as="nav"
-                    maxW="500px"
+                    maxW="600px"
                     flex="1"
                     justify="space-between"
                   >
                     <NavigationItem label="Novidades" href="/novidades" />
                     <NavigationItem label="Petições" href="/peticoes" />
+                    <NavigationItem label="Podcast" href="/podcast" />
                     <NavigationItem
                       label="Conecta"
                       href="https://luanatavaressp.com.br/"
@@ -229,12 +230,13 @@ export default function Header() {
                 <Flex
                   ml="7rem"
                   as="nav"
-                  maxW="500px"
+                  maxW="600px"
                   flex="1"
                   justify="space-between"
                 >
                   <NavigationItem label="Novidades" href="/novidades" />
                   <NavigationItem label="Petições" href="/peticoes" />
+                  <NavigationItem label="Podcast" href="/podcast" />
                   <NavigationItem
                     label="Conecta"
                     href="https://luanatavaressp.com.br/"

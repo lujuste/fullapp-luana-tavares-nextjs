@@ -79,7 +79,10 @@ export default function Contact() {
           >
             Quer ajudar a modernizar o Brasil?
           </Heading>
-          <NextLink href="/peticoes" passHref>
+          <NextLink
+            href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+            passHref
+          >
             <Button
               mt="3rem"
               mx="2rem"
@@ -105,8 +108,7 @@ export default function Contact() {
                 outline: 'transparent',
               }}
             >
-              <Icon fontSize="0.85rem" mr="6px" as={ChatIcon} /> Assinar
-              petições
+              <Icon fontSize="0.85rem" mr="6px" as={ChatIcon} /> Fale comigo!
             </Button>
           </NextLink>
         </Flex>

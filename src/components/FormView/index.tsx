@@ -81,11 +81,11 @@ export default function FormView() {
             Quer ajudar a modernizar o Brasil?
           </Heading>
         </Reveal>
-        <NextLink
-          href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-          passHref
-        >
-          <Reveal>
+        <Reveal>
+          <NextLink
+            href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+            passHref
+          >
             <Button
               id="form-control"
               mt="3rem"
@@ -113,8 +113,8 @@ export default function FormView() {
             >
               <Icon mr="10px" as={ChatIcon} /> Fale comigo!
             </Button>
-          </Reveal>
-        </NextLink>
+          </NextLink>
+        </Reveal>
       </Flex>
       <Flex
         mt={['4rem', '4rem', '0']}

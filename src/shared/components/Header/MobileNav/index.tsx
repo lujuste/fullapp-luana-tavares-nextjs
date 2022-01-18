@@ -17,10 +17,6 @@ export default function MobileNav() {
       url: '/novidades',
     },
     {
-      page: 'Petições',
-      url: '/peticoes',
-    },
-    {
       page: 'Podcast',
       url: '/podcast',
     },
@@ -28,6 +24,12 @@ export default function MobileNav() {
       page: 'Conecta',
       url: 'https://luanatavaressp.com.br',
     },
+
+    {
+      page: 'Petições',
+      url: '/peticoes',
+    },
+
     {
       page: 'Contato',
       url: '/contato',
@@ -59,7 +61,7 @@ export default function MobileNav() {
               animate="visible"
               variants={item}
               color="white"
-              fontWeight="bold"
+              fontWeight="normal"
               fontSize="24"
               whileTap={{ scale: 0.9, rotate: 0 }}
             >

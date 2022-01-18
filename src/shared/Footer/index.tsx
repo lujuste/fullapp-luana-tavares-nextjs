@@ -295,7 +295,7 @@ export default function Footer() {
             mx="auto"
             flexDir={['column']}
           >
-            <Flex px="2.5rem" mt="1.5rem" justify="space-between">
+            <Flex px="1.5rem" mt="1.5rem" justify="space-between">
               <Flex flexDir="column">
                 <Heading
                   mb="0.5rem"
@@ -324,7 +324,7 @@ export default function Footer() {
                   </NextLink>
                 </List>
               </Flex>
-              <Flex flexDir="column">
+              <Flex mr={['0.5rem']} flexDir="column">
                 <Heading
                   mb="0.5rem"
                   fontFamily="Raleway"

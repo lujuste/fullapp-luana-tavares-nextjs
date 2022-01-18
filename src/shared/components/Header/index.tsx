@@ -292,15 +292,19 @@ export default function Header() {
                   <DrawerOverlay>
                     <DrawerContent bg="purple.900">
                       <DrawerCloseButton
+                        className={'close-button'}
+                        as="button"
                         color="white"
                         fontSize="1.25rem"
                         mt="6"
                         zIndex="500000"
                         _focus={{
-                          border: 'none',
+                          border: 'transparent',
+                          outline: 'transparent',
                         }}
                         _active={{
-                          border: 'none',
+                          border: 'transparent',
+                          outline: 'transparent',
                         }}
                       />
                       <DrawerHeader mt="7"></DrawerHeader>

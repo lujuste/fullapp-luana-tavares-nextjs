@@ -131,7 +131,7 @@ export default function News({ posts }: any) {
             px="5"
             py="2"
             mx="auto"
-            mt="3rem"
+            mt={['1rem', '1rem', '3rem']}
             fontFamily="Raleway"
             boxShadow="sm"
             mb="4rem"

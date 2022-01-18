@@ -290,7 +290,7 @@ export default function Post({ post, navigation }: PostProps) {
                     {navigation.nextPost[0].data.title}{' '}
                   </Heading>
                 </Link>
-                <Link href={`/novidades/${navigation.nextPost[0].data.title}`}>
+                <Link href={`/novidades/${navigation.nextPost[0].data.uid}`}>
                   <Text
                     mt="1rem"
                     color="black"

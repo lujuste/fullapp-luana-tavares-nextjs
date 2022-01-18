@@ -34,7 +34,7 @@ export default function BiographyItem({
         <Text
           maxW="590px"
           h="auto"
-          fontSize={['18', '18', '18']}
+          fontSize={['15.5', '16', '18']}
           fontFamily="Roboto"
           lineHeight={1.8}
           fontWeight="400"

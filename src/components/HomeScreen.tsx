@@ -128,8 +128,8 @@ export default function HomeScreen() {
               <Reveal>
                 <Button
                   fontWeight={['400', '400', '600']}
-                  fontFamily="Roboto"
-                  fontSize={['14px', '14px', '20px']}
+                  fontFamily="Raleway"
+                  fontSize={['14px', '14px', '16px']}
                   height="50px"
                   type="button"
                   mb={['4rem', '3rem', 0]}
@@ -151,7 +151,7 @@ export default function HomeScreen() {
                     outline: 'transparent',
                   }}
                 >
-                  Quero fazer parte da mudança
+                  Quero fazer parte da mudança!
                 </Button>
               </Reveal>
             </Flex>

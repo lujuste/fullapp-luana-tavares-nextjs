@@ -253,7 +253,7 @@ export default function Post({ post, navigation }: PostProps) {
                     {navigation.prevPost[0].data.title}{' '}
                   </Heading>
                 </Link>
-                <Link href={`/novidades/${navigation.prevPost[0].data.title}`}>
+                <Link href={`/novidades/${navigation.prevPost[0].uid}`}>
                   <Text
                     mt="1rem"
                     color="black"
@@ -269,7 +269,7 @@ export default function Post({ post, navigation }: PostProps) {
 
             {navigation?.nextPost.length > 0 && (
               <Flex mr="1rem" flexDir="column" justify="space-around">
-                <Link href={`/novidades/${navigation.nextPost[0].data.title}`}>
+                <Link href={`/novidades/${navigation.nextPost[0].uid}`}>
                   <Heading
                     color="purple.500"
                     cursor="pointer"

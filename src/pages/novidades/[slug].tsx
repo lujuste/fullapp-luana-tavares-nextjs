@@ -240,7 +240,7 @@ export default function Post({ post, navigation }: PostProps) {
                 px={['1rem', '1rem', '0']}
                 flexDir="column"
               >
-                <Link href={`/novidades/${navigation.prevPost[0].data.title}`}>
+                <Link href={`/novidades/${navigation.prevPost[0].uid}`}>
                   <Heading
                     cursor="pointer"
                     textAlign={['center', 'center', 'left']}

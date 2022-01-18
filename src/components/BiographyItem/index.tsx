@@ -1,4 +1,5 @@
 import { Flex, Box, Text, Heading, FlexProps } from '@chakra-ui/react';
+import Reveal from 'react-reveal/Reveal';
 import Image from 'next/image';
 
 interface IParagraphProps extends FlexProps {
@@ -29,22 +30,24 @@ export default function BiographyItem({
         height={369}
         priority={true}
       />
-      <Text
-        maxW="590px"
-        h="auto"
-        fontSize={['18', '18', '18']}
-        fontFamily="Roboto"
-        lineHeight={1.6}
-        fontWeight="400"
-        p={['5', '5', 0]}
-        mt={['10', '10', '10']}
-        color="white"
-        textAlign={['center', 'center', 'center', 'left']}
-        mx={['auto', 'auto', 'auto', '1rem']}
-        mb={['3rem', '3rem', '0']}
-      >
-        {paragraph}
-      </Text>
+      <Reveal>
+        <Text
+          maxW="590px"
+          h="auto"
+          fontSize={['18', '18', '18']}
+          fontFamily="Roboto"
+          lineHeight={1.6}
+          fontWeight="400"
+          p={['5', '5', 0]}
+          mt={['10', '10', '10']}
+          color="white"
+          textAlign={['center', 'center', 'center', 'left']}
+          mx={['auto', 'auto', 'auto', '1rem']}
+          mb={['3rem', '3rem', '0']}
+        >
+          {paragraph}
+        </Text>
+      </Reveal>
     </Flex>
   );
 }

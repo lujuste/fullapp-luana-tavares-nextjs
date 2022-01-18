@@ -102,62 +102,70 @@ export default function ModernServices() {
                 </Text>
               </Heading>
             </Reveal>
-            <Flex flexDir="column">
-              <CardMobile
-                image="digital-transformation"
-                title="Transformação digital de serviços"
-                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-              >
-                <ConsultancyIcon />
-              </CardMobile>
+            <Reveal>
+              <Flex flexDir="column">
+                <CardMobile
+                  image="digital-transformation"
+                  title="Transformação digital de serviços"
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
+                >
+                  <ConsultancyIcon />
+                </CardMobile>
 
-              <ButtonCards
-                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                callToAction="Quero participar da transformação"
-              />
-            </Flex>{' '}
-            <Flex mt="3rem" flexDir="column">
-              <CardMobile
-                image="group"
-                title="Reforma Institucional"
-                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-              >
-                <IconTrainning />
-              </CardMobile>
+                <ButtonCards
+                  href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                  callToAction="Quero participar da transformação"
+                />
+              </Flex>{' '}
+            </Reveal>
+            <Reveal>
+              <Flex mt="3rem" flexDir="column">
+                <CardMobile
+                  image="group"
+                  title="Reforma Institucional"
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
+                >
+                  <IconTrainning />
+                </CardMobile>
 
-              <ButtonCards
-                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                callToAction="Quero participar da reforma"
-              />
-            </Flex>
-            <Flex mt="3rem" flexDir="column">
-              <CardMobile
-                image="congresso"
-                title="Reforma do Estado"
-                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-              >
-                <IconCourses />
-              </CardMobile>
+                <ButtonCards
+                  href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                  callToAction="Quero participar da reforma"
+                />
+              </Flex>
+            </Reveal>
+            <Reveal>
+              <Flex mt="3rem" flexDir="column">
+                <CardMobile
+                  image="congresso"
+                  title="Reforma do Estado"
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
+                >
+                  <IconCourses />
+                </CardMobile>
 
-              <ButtonCards
-                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                callToAction="Quero participar da reforma"
-              />
-            </Flex>
-            <Flex mb="3rem" mt="3rem" flexDir="column">
-              <CardMobile
-                image="poupatempo"
-                title="Modelo poupatempo"
-                description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-              >
-                <IconContract />
-              </CardMobile>
+                <ButtonCards
+                  href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                  callToAction="Quero participar da reforma"
+                />
+              </Flex>
+            </Reveal>
+            <Reveal>
+              <Flex mb="3rem" mt="3rem" flexDir="column">
+                <CardMobile
+                  image="poupatempo"
+                  title="Modelo poupatempo"
+                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
+                >
+                  <IconContract />
+                </CardMobile>
 
-              <ButtonCards
-                href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                callToAction="Quero participar da mudança"
-              />
-            </Flex>
+                <ButtonCards
+                  href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                  callToAction="Quero participar da mudança"
+                />
+              </Flex>
+            </Reveal>
           </Flex>
         </>
       ) : (
@@ -215,57 +223,64 @@ export default function ModernServices() {
               flexWrap="wrap"
               gap={-100}
             >
-              <GridItem mb="2rem">
-                <CardDigital
-                  title="Transformação digital dos serviços"
-                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-                />
-                <Flex>
-                  <ButtonCards
-                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                    callToAction="Quero participar da transformação"
+              <Reveal>
+                <GridItem mb="2rem">
+                  <CardDigital
+                    title="Transformação digital dos serviços"
+                    description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                   />
-                </Flex>
-              </GridItem>
+                  <Flex>
+                    <ButtonCards
+                      href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                      callToAction="Quero participar da transformação"
+                    />
+                  </Flex>
+                </GridItem>
+              </Reveal>
+              <Reveal>
+                <GridItem mb="2rem">
+                  <CardInstitucional
+                    title="Reforma institucional"
+                    description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
+                  />
+                  <Flex>
+                    <ButtonCards
+                      href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                      callToAction="Quero participar da reforma"
+                    />
+                  </Flex>
+                </GridItem>
+              </Reveal>
 
-              <GridItem mb="2rem">
-                <CardInstitucional
-                  title="Reforma institucional"
-                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-                />
-                <Flex>
-                  <ButtonCards
-                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                    callToAction="Quero participar da reforma"
+              <Reveal>
+                <GridItem mb="2rem">
+                  <CardRebuild
+                    title="Reforma do Estado"
+                    description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when,"
                   />
-                </Flex>
-              </GridItem>
+                  <Flex>
+                    <ButtonCards
+                      href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                      callToAction="Quero participar da reforma"
+                    />
+                  </Flex>
+                </GridItem>
+              </Reveal>
 
-              <GridItem mb="2rem">
-                <CardRebuild
-                  title="Reforma do Estado"
-                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when,"
-                />
-                <Flex>
-                  <ButtonCards
-                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                    callToAction="Quero participar da reforma"
+              <Reveal>
+                <GridItem mb="2rem">
+                  <CardPoupaTempo
+                    title="Modelo Poupatempo"
+                    description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
                   />
-                </Flex>
-              </GridItem>
-
-              <GridItem mb="2rem">
-                <CardPoupaTempo
-                  title="Modelo Poupatempo"
-                  description="Lorem isp Ipsum has been the industry's standard dummy text ever since the 1500s, when."
-                />
-                <Flex>
-                  <ButtonCards
-                    href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
-                    callToAction="Quero participar da mudança"
-                  />
-                </Flex>
-              </GridItem>
+                  <Flex>
+                    <ButtonCards
+                      href="https://api.whatsapp.com/send?phone=5511939430303&text=Ol%C3%A1%20Luana,%20quero%20participar%20da%20mudan%C3%A7a%20na%20pol%C3%ADtica!"
+                      callToAction="Quero participar da mudança"
+                    />
+                  </Flex>
+                </GridItem>
+              </Reveal>
             </Grid>
           </Flex>
         </>

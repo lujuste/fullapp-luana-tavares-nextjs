@@ -122,6 +122,7 @@ export default function Post({ post, navigation }: PostProps) {
         mx="auto"
         align="center"
         py="7rem"
+        pb={['-4rem', '-4rem', 0]}
       >
         <Flex maxW={['500px', '500px', '1010px']} w="100%" h="463px">
           <Image
@@ -217,15 +218,9 @@ export default function Post({ post, navigation }: PostProps) {
             );
           })}
         </Text>
-        <Divider
-          mt="3rem"
-          maxW="980px"
-          mx="auto"
-          w="100%"
-          orientation="horizontal"
-        />
+
         <Flex
-          mt={['0', '0', '3rem']}
+          mt={['3rem', '3rem', '3rem']}
           justify="center"
           align="center"
           maxW="1200px"
@@ -239,11 +234,16 @@ export default function Post({ post, navigation }: PostProps) {
             w="100%"
           >
             {navigation?.prevPost.length > 0 && (
-              <Flex flexDir="column">
+              <Flex
+                mx={['auto', 'auto', 0]}
+                mb={['2rem', '2rem', '1rem']}
+                px={['1rem', '1rem', '0']}
+                flexDir="column"
+              >
                 <Link href={`/novidades/${navigation.prevPost[0].data.title}`}>
                   <Heading
                     cursor="pointer"
-                    textAlign={['left']}
+                    textAlign={['center', 'center', 'left']}
                     textOverflow="ellipsis"
                     maxW="360px"
                     fontSize="20px"
@@ -268,10 +268,16 @@ export default function Post({ post, navigation }: PostProps) {
             )}
 
             {navigation?.nextPost.length > 0 && (
-              <Flex mr="1rem" flexDir="column" justify="space-around">
+              <Flex
+                mt="-1rem"
+                mr="1rem"
+                px={['1rem', '1rem', '0']}
+                flexDir="column"
+                justify="space-around"
+              >
                 <Link href={`/novidades/${navigation.nextPost[0].uid}`}>
                   <Heading
-                    color="purple.500"
+                    color="purple.900"
                     cursor="pointer"
                     mr="auto"
                     mt={['2rem', '3rem', '0rem', '0', '0']}
@@ -304,6 +310,9 @@ export default function Post({ post, navigation }: PostProps) {
           mt="3rem"
           maxW="980px"
           mx="auto"
+          color="transparent"
+          bgColor="transparent"
+          borderColor="transparent"
           w="100%"
           orientation="horizontal"
         />

@@ -27,7 +27,7 @@ import spotifyIcon from '../../../public/images/spotify2.svg';
 
 import NextLink from 'next/link';
 
-import headerLogo from '../../../public/images/luanaLogo3.svg';
+import headerLogo from '../../../public/images/luanaLogo4.svg';
 
 import { toast } from 'react-toastify';
 
@@ -127,7 +127,7 @@ export default function Footer() {
                 gap={20}
               >
                 <Flex justify="space-around" flexDir="column">
-                  <Flex mt="-2rem" ml="0.7rem">
+                  <Flex mt="-3rem" ml="0.7rem">
                     <NextLink href="/" passHref>
                       <Icon cursor="pointer" as={headerLogo} fontSize="10rem" />
                     </NextLink>

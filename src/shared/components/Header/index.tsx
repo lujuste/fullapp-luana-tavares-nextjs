@@ -15,7 +15,7 @@ import { useRouter } from 'next/router';
 import imgLogoMobile from '/images/luanaLogo.png';
 import { isSafari, isMobileSafari } from 'react-device-detect';
 
-import headerLogo from '../../../../public/images/luanaLogo3.svg';
+import headerLogo from '../../../../public/images/luanaLogo4.svg';
 
 import { MotionButton, MotionFlex } from '../../styles/animation';
 
@@ -93,16 +93,9 @@ export default function Header() {
               px="6"
               align="center"
             >
-              <Flex align="center" mt="1.3rem" cursor="pointer">
+              <Flex align="center" cursor="pointer">
                 <Link href="/" passHref>
-                  {isSafari || isMobileSafari ? (
-                    <img
-                      src="/images/luanaLogo2.png"
-                      alt="Logo luana tavares"
-                    />
-                  ) : (
-                    <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
-                  )}
+                  <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
                 </Link>
               </Flex>
 
@@ -215,13 +208,9 @@ export default function Header() {
             px="6"
             align="center"
           >
-            <Flex align="center" mt="1.3rem" cursor="pointer">
+            <Flex align="center" cursor="pointer">
               <Link href="/" passHref>
-                {isSafari || isMobileSafari ? (
-                  <img src="/images/luanaLogo2.png" alt="Logo luana tavares" />
-                ) : (
-                  <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
-                )}
+                <Icon as={headerLogo} ml="0.2rem" fontSize="7rem" />
               </Link>
             </Flex>
 

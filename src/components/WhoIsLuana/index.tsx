@@ -1,8 +1,45 @@
 import { Flex, Heading, Text, Grid, GridItem, Box } from '@chakra-ui/react';
 import BiographyItem from '../BiographyItem';
 import Reveal from 'react-reveal/Reveal';
+import { GetStaticProps } from 'next';
+import { getPrismicClient } from '../../services/prismic';
+import Prismic from '@prismicio/client';
 
-export default function WhoIsLuana() {
+interface Biographies {
+  uid: string;
+  image: string;
+  content: {
+    description: string;
+  }[];
+}
+
+export default function WhoIsLuana({ bios, biosTwo, biosThree }: any) {
+  console.log(bios, 'este é bios');
+
+  console.log(biosThree, 'TEAQUI TESTEAQUI');
+
+  console.log(biosTwo, 'biosTwoooo!!!');
+  const obj = bios.map(item => {
+    return {
+      uid: item.uid,
+    };
+  });
+
+  const formattedText2 = biosTwo[0].content[0];
+  const formattedText3 = biosThree[0].content[0];
+  const formattedText = bios[0].content[0];
+
+  console.log(bios, 'aqui inicia');
+
+  console.log(formattedText3, 'texto funfa?!?!');
+
+  const image3 = biosThree[0].image;
+  const image1 = bios[0].image;
+  const image2 = biosTwo[0].image;
+
+  console.log(image1, 'bate a image?');
+  console.log(image2, 'bate a image?');
+
   return (
     <>
       <Flex
@@ -34,30 +71,42 @@ export default function WhoIsLuana() {
 
         <Reveal>
           <BiographyItem
-            image="/images/fotoluana2.jpg"
+            image={image1}
             flexDir={['column', 'column', 'column', 'row']}
-            paragraph="Luana Tavares tem 35 anos e começou a trabalhar com 13. Seu primeiro emprego foi como montadora de sacolas de papelão em uma fábrica, 8 horas por dia em pé. Ainda assim, nunca deixou de acreditar, sabia que com trabalho duro e educação conseguiria melhorar a sua vida e a da sua família. Aos 17 anos passou a estudar Publicidade e Propaganda. Com a ajuda de uma chefe, que lhe ofereceu moradia, durante 3 anos, conseguiu arcar com as despesas do curso. Depois disso, foi recepcionista do andar onde os sócios Jorge Paulo Lemann, Marcel Telles e Carlos Alberto Sicupira mantinham suas ONGs e seus family offices. E foi a partir deste momento que sua trajetória mudou completamente."
+            paragraph={formattedText.description}
           />
         </Reveal>
 
         <Reveal>
           <BiographyItem
-            image="/images/fotoluana1.jpg"
+            image={image2}
             flexDir={['column', 'column', 'column', 'row-reverse']}
-            paragraph="Luana se dedica há mais de 15 anos ao setor de impacto social no Brasil, atuando em várias organizações sem fins lucrativos com foco no fortalecimento da democracia e modernização do estado.  Dirigiu por 8 anos uma das organizações mais relevantes neste campo, o CLP - Centro de Liderança Pública que, desde a sua criação 2008, desenvolveu mais de 8.000 líderes públicos em todo o Brasil e está informando e engajando a sociedade na defesa de uma agenda estrutural de impacto nacional junto ao Congresso. 
-          
-         "
+            paragraph={formattedText2.description}
           />
         </Reveal>
 
         <Reveal>
           <BiographyItem
-            image="/images/fotoLuana3.jpg"
+            image={image3}
             flexDir={['column', 'column', 'column', 'row']}
-            paragraph="É também palestrante e professora de Liderança Pública, além de conselheira do Vetor Brasil, Poder do Voto, organizações sociais de impacto focadas em aumentar a capacidade do estado por meio de melhoria na gestão de pessoas em governos e fortalecimento da participação cívica. Em 2021, passou a ser associada do Lola Brasil e Livres, dois movimentos que trabalham para levar conteúdo e diálogo de qualidade sobre o liberalismo no Brasil. É também integrante da Rede de Líderes da Fundação Lemann e faz parte da turma de 2021 do RenovaBR e da RAPS. Luana é licenciada em Publicidade, com MBA - Master in Business Administração (Fundação Getúlio Vargas - FGVSP), e possui duas especializações, uma em gestão pública e outra em desenvolvimento de lideranças, na Harvard Kennedy School e Oxford University.  Durante a pandemia da COVID-19 passou 12 meses no Reino Unido para concluir um Mestrado em Políticas Públicas (MPP) na Blavatnik School of Government, escola de governo da Oxford University."
+            paragraph={formattedText3.description}
           />
         </Reveal>
       </Flex>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+
+  const postBiography = await prismic.query([
+    Prismic.predicates.at('document.type', 'biography'),
+  ]);
+
+  console.log(postBiography);
+
+  return {
+    props: {},
+  };
+};

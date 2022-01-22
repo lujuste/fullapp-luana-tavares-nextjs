@@ -15,6 +15,14 @@ import ModernServices from '../components/ModernServices';
 import { RichText } from 'prismic-dom';
 import Head from 'next/head';
 
+interface Biographies {
+  uid: string;
+  image: string;
+  content: {
+    description: string;
+  }[];
+}
+
 interface Post {
   uid?: string;
   first_publication_date?: string;
@@ -42,9 +50,21 @@ interface PostPagination {
 
 interface HomeProps {
   postsPagination: PostPagination;
+  biographies: Biographies;
+  biographiesTwo: Biographies;
+  biographiesThree: Biographies;
 }
 
-const Home = ({ postsPagination }: HomeProps): JSX.Element => {
+const Home = ({
+  postsPagination,
+  biographies,
+  biographiesTwo,
+  biographiesThree,
+}: HomeProps): JSX.Element => {
+  console.log(biographies, 'testando front prop');
+  console.log(biographiesTwo, 'testandoNunNum2');
+  console.log(biographiesThree, 'testandoNunNum333!!!!');
+
   function getReadTime(item: Post): number {
     const totalWords = item.data.content.reduce((total, contentItem) => {
       //@ts-ignore
@@ -104,8 +124,6 @@ const Home = ({ postsPagination }: HomeProps): JSX.Element => {
     };
   });
 
-  console.log(newPosts, 'testando2');
-
   return (
     <>
       <Head>
@@ -140,7 +158,11 @@ const Home = ({ postsPagination }: HomeProps): JSX.Element => {
       <Header />
       <HomeScreen />
       <News posts={newPosts} />
-      <WhoIsLuana />
+      <WhoIsLuana
+        bios={biographies}
+        biosTwo={biographiesTwo}
+        biosThree={biographiesThree}
+      />
       <ModernServices />
       <FormView />
       <Footer />
@@ -163,6 +185,61 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   );
 
+  const postBiography = await prismic.query([
+    Prismic.predicates.at('document.type', 'biography'),
+  ]);
+
+  const postBiographyTwo = await prismic.query([
+    Prismic.predicates.at('document.type', 'biography2'),
+  ]);
+
+  const postBiographyThree = await prismic.query([
+    Prismic.predicates.at('document.type', 'biography4'),
+  ]);
+
+  console.log(JSON.stringify(postBiography.results), null, 2);
+
+  const biographies = postBiography.results.map(bio => {
+    return {
+      uid: bio.id,
+      image: bio.data.image.url,
+      content: bio.data.description.map(content => {
+        return {
+          description: content.text,
+        };
+      }),
+    };
+  });
+
+  const biographiesTwo = postBiographyTwo.results.map(bio => {
+    return {
+      uid: bio.id,
+      image: bio.data.image.url,
+      content: bio.data.description.map(content => {
+        return {
+          description: content.text,
+        };
+      }),
+    };
+  });
+
+  const biographiesThree = postBiographyThree.results.map(bio => {
+    return {
+      uid: bio.id,
+      image: bio.data.image.url,
+      content: bio.data.description.map(content => {
+        return {
+          description: content.text,
+        };
+      }),
+    };
+  });
+
+  console.log(biographiesThree, 'VAMOS VER');
+
+  console.log(JSON.stringify(biographies, null, 2), 'aquiii');
+  console.log(biographies);
+
   const posts = postsResponse.results.map(post => {
     return {
       uid: post.uid,
@@ -174,7 +251,7 @@ export const getStaticProps: GetStaticProps = async () => {
         banner: {
           url: post.data.banner.url,
         },
-        content: post.data.content.map(content => {
+        content: post.data.content.flatMap(content => {
           return {
             heading: content.heading,
             body: [...content.body],
@@ -184,18 +261,17 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   });
 
-  console.log(JSON.stringify(posts), null, 2);
-
   const postsPagination = {
     next_page: postsResponse.next_page,
     results: posts,
   };
 
-  console.log(JSON.stringify(postsResponse.results), null, 2);
-
   return {
     props: {
       postsPagination,
+      biographies,
+      biographiesTwo,
+      biographiesThree,
     },
     revalidate: 60 * 60,
   };

@@ -3,7 +3,7 @@ import Reveal from 'react-reveal/Reveal';
 import Image from 'next/image';
 
 interface IParagraphProps extends FlexProps {
-  paragraph: string;
+  paragraph?: string;
   image: string;
 }
 

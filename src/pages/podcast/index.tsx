@@ -15,6 +15,9 @@ import Header from '../../shared/components/Header';
 import Footer from '../../shared/Footer';
 import buttonIcon from '../../../public/images/play-button.svg';
 import NextLink from 'next/link';
+import { GetStaticProps } from 'next';
+import { getPrismicClient } from '../../services/prismic';
+import Prismic from '@prismicio/client';
 
 const spotifyData = [
   {
@@ -63,7 +66,9 @@ const spotifyData = [
   },
 ];
 
-export default function Podcast() {
+export default function Podcast({ formattedSpotify }) {
+  console.log(formattedSpotify, 'testando');
+
   return (
     <>
       <Header />
@@ -106,7 +111,7 @@ export default function Podcast() {
             ]}
             gap="20"
           >
-            {spotifyData.map(episode => (
+            {formattedSpotify.map(episode => (
               <MotionGridItem
                 _hover={{ boxShadow: '2xl', borderRadius: '20px' }}
                 cursor="pointer"
@@ -162,7 +167,7 @@ export default function Podcast() {
                         as="h5"
                         fontFamily={'Raleway'}
                       >
-                        {episode.description}
+                        {episode.subtitle[0].text}
                       </Text>
                     </Box>
                   </Flex>
@@ -176,3 +181,37 @@ export default function Podcast() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+
+  const postsResponse = await prismic.query(
+    [Prismic.predicates.at('document.type', 'spotify')],
+    {
+      pageSize: 10,
+      orderings: '[document.first_publication_date desc]',
+    }
+  );
+
+  console.log(JSON.stringify(postsResponse), null, 2);
+
+  const formattedSpotify = postsResponse.results.map(podcast => {
+    return {
+      id: podcast.id,
+      image: podcast.data.image.url,
+      subtitle: podcast.data.subtitle.flatMap(sub => {
+        return {
+          text: sub.text,
+        };
+      }),
+      href: podcast.data.link.url,
+      title: podcast.data.title[0].text,
+    };
+  });
+
+  console.log(formattedSpotify, 'sera q deu bom?');
+
+  return {
+    props: { formattedSpotify },
+  };
+};

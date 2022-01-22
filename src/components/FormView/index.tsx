@@ -125,16 +125,15 @@ export default function FormView() {
         flexDir="column"
         w="100%"
       >
-        <Reveal>
-          <Heading
-            mt={['0.5rem', '0.5rem', '1.5rem']}
-            fontSize={['32px', '32px', '48px']}
-            fontWeight="bold"
-            mx="auto"
-          >
-            Inscreva-se
-          </Heading>
-        </Reveal>
+        <Heading
+          mt={['0.5rem', '0.5rem', '1.5rem']}
+          fontSize={['32px', '32px', '48px']}
+          fontWeight="bold"
+          mx="auto"
+        >
+          Inscreva-se
+        </Heading>
+
         <Reveal>
           <Input
             mt={['1.5rem', '1.5rem', '4rem']}
